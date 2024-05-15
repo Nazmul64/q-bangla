@@ -1,0 +1,83 @@
+@extends('layouts.app_auth')
+
+@section('login-from')
+ <div class="account-box">
+                                <div class="account-logo-box">
+                                    <div class="text-center">
+                                        <a href="index.html">
+                                            <img src="assets/images/logo-dark.png" alt="" height="30">
+                                        </a>
+                                    </div>
+                                    <h5 class="text-uppercase mb-1 mt-4">Sign In</h5>
+                                    <p class="mb-0">Login to your Admin account</p>
+                                </div>
+
+                                <div class="account-content mt-4">
+                                    <form method="POST" action="{{ route('register') }}">
+                                     @csrf
+                                      <div class="form-group row">
+                                            <div class="col-12">
+                                                <label for="emailaddress">Name</label>
+                                                <input class="form-control  @error('name') is-invalid @enderror " type="name" id="emailaddress" name="name" placeholder="Enter Your Name">
+                                                @error('name')
+                                                      <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-12">
+                                                <label for="emailaddress">Email address</label>
+                                                <input class="form-control  @error('email') is-invalid @enderror " type="email" id="emailaddress" name="email" placeholder="Enter Your Email">
+                                                @error('email')
+                                                      <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-12">
+                                                <label for="emailaddress">Number</label>
+                                                <input class="form-control  @error('number') is-invalid @enderror " type="number" id="emailaddress" name="number" placeholder="Enter Your Phone Number">
+                                                @error('number')
+                                                      <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-12">
+                                                <a href="page-recoverpw.html" class="text-muted float-right"><small>Forgot your password?</small></a>
+                                                <label for="password">Password</label>
+                                                <input class="form-control @error('password') is-invalid @enderror " type="password" name="password" id="password" placeholder="Enter your password">
+                                                @error('password')
+                                                      <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-12">
+                                                <label for="password"> Confirmation Password</label>
+                                                <input class="form-control @error('password_confirmation') is-invalid @enderror " type="password_confirmation" name="password_confirmation" id="confirmation_password" placeholder="Enter your confirmation_password">
+                                                @error('password_confirmation')
+                                                      <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row text-center mt-2">
+                                            <div class="col-12">
+                                                <button class="btn btn-md btn-block btn-primary waves-effect waves-light" type="submit">Login</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                    <div class="row mt-4 pt-2">
+                                        <div class="col-sm-12 text-center">
+                                            <p class="text-muted mb-0">Don't have an account? <a href="{{ route('login') }}" class="text-dark ml-1"><b>Sign Up</b></a></p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+@endsection
