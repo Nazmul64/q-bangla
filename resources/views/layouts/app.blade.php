@@ -5,7 +5,7 @@
 <!-- Mirrored from coderthemes.com/adminox/layouts/vertical/page-starter.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Mar 2024 14:19:19 GMT -->
 <head>
         <meta charset="utf-8" />
-        <title>Starter page | Adminox - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>Q-Bangla</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -157,7 +157,7 @@
                         <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <img src="{{ asset('uploads/users_photo/'.Auth::user()->profile_photo) }}" alt="user-image" class="rounded-circle">
                             <span class="pro-user-name ml-1">
-                                {{ Auth::user()->name  }} <i class="mdi mdi-chevron-down"></i>
+                                {{ (Auth()->user()->role==2) ? 'Hi Admin':' Hi Customer' }}<i class="mdi mdi-chevron-down"></i>
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
@@ -247,7 +247,7 @@
 
                         <ul class="metismenu" id="side-menu">
 
-                            <li class="menu-title">Navigation</li>
+                            <li class="menu-title">{{ Auth::user()->name }}</li>
 
                             <li>
                                 <a href="{{ route('home') }}">
@@ -256,6 +256,15 @@
                                 </a>
 
                             </li>
+                            @if(Auth::user()->role==2)
+                               <li>
+                                <a href="{{ route('email.offer') }}">
+                                    <i class="fe-sidebar"></i>
+                                    <span>  EmailOffer </span>
+                                </a>
+                            </li>
+                            @endif
+
 
                             <li>
                                 <a href="javascript: void(0);">
@@ -399,6 +408,18 @@
 
         <!-- App js -->
         <script src="{{ asset('uploads/dashboard/assets/js/app.min.js')}}"></script>
+        <!-- Vendor js -->
+
+
+        <!--C3 Chart-->
+        <script src="{{ asset('uploads/dashboard/assets/libs/d3/d3.min.js')}}"></script>
+        <script src="{{ asset('uploads/dashboard/assets/libs/c3/c3.min.js')}}"></script>
+
+        <script src="{{ asset('uploads/dashboard/assets/libs/echarts/echarts.min.js')}}"></script>
+
+        <script src="{{ asset('uploads/dashboard/assets/js/pages/dashboard.init.js')}}"></script>
+
+        <!-- App js -->
 
     </body>
 

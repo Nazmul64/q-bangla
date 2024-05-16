@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
@@ -61,6 +61,7 @@
                                    <span class="text-danger">{{ $message }}</span>
                               @enderror
                          </div>
+
                          <div class="mt-2">
                               <label> New Password</label>
                               <input type="text"class="form-control @error('new_password') is-invalid   @enderror"name="new_password">

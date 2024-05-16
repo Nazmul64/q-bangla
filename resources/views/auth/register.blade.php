@@ -9,7 +9,7 @@
                                         </a>
                                     </div>
                                     <h5 class="text-uppercase mb-1 mt-4">Sign In</h5>
-                                    <p class="mb-0">Login to your Admin account</p>
+                                    <p class="mb-0">Login to your User account</p>
                                 </div>
 
                                 <div class="account-content mt-4">
@@ -17,7 +17,7 @@
                                      @csrf
                                       <div class="form-group row">
                                             <div class="col-12">
-                                                <label for="emailaddress">Name</label>
+                                                <label for="emailaddress">Full Name<span class="text-danger">*</span></label>
                                                 <input class="form-control  @error('name') is-invalid @enderror " type="name" id="emailaddress" name="name" placeholder="Enter Your Name">
                                                 @error('name')
                                                       <span class="text-danger">{{ $message }}</span>
@@ -27,7 +27,7 @@
 
                                         <div class="form-group row">
                                             <div class="col-12">
-                                                <label for="emailaddress">Email address</label>
+                                                <label for="emailaddress">Email address<span class="text-danger">*</span></label>
                                                 <input class="form-control  @error('email') is-invalid @enderror " type="email" id="emailaddress" name="email" placeholder="Enter Your Email">
                                                 @error('email')
                                                       <span class="text-danger">{{ $message }}</span>
@@ -47,7 +47,7 @@
                                         <div class="form-group row">
                                             <div class="col-12">
                                                 <a href="page-recoverpw.html" class="text-muted float-right"><small>Forgot your password?</small></a>
-                                                <label for="password">Password</label>
+                                                <label for="password">Password<span class="text-danger">*</span></label>
                                                 <input class="form-control @error('password') is-invalid @enderror " type="password" name="password" id="password" placeholder="Enter your password">
                                                 @error('password')
                                                       <span class="text-danger">{{ $message }}</span>
@@ -56,8 +56,8 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-12">
-                                                <label for="password"> Confirmation Password</label>
-                                                <input class="form-control @error('password_confirmation') is-invalid @enderror " type="password_confirmation" name="password_confirmation" id="confirmation_password" placeholder="Enter your confirmation_password">
+                                                <label for="password"> Confirmation Password<span class="text-danger">*</span></label>
+                                                <input class="form-control @error('password_confirmation') is-invalid @enderror " type="password" name="password_confirmation" id="confirmation_password" placeholder="Enter your confirmation_password">
                                                 @error('password_confirmation')
                                                       <span class="text-danger">{{ $message }}</span>
                                                 @enderror
