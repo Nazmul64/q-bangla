@@ -263,23 +263,21 @@
                                     <span>  EmailOffer </span>
                                 </a>
                             </li>
-                            @endif
-
-
-                            <li>
+                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="fe-sidebar"></i>
-                                    <span>  Layouts </span>
+                                    <span>Category</span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="layouts-horizontal.html">Horizontal</a></li>
-                                    <li><a href="layouts-menucollapsed.html">Menu Collapsed</a></li>
-                                    <li><a href="layouts-light-sidebar.html">Light Sidebar</a></li>
-                                    <li><a href="layouts-small-sidebar.html">Small Sidebar</a></li>
-                                    <li><a href="layouts-boxed.html">Boxed</a></li>
+                                    <li><a href="{{ route('category.create') }}">Add Category</a></li>
+                                    <li><a href="layouts-menucollapsed.html">List Category</a></li>
                                 </ul>
                             </li>
+                            @endif
+
+
+
 
                         </ul>
 
