@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('category_name');
             $table->string('category_tagline');
             $table->string('category_photo');
+            $table->string('status')->default('hide');
             $table->timestamps();
         });
     }

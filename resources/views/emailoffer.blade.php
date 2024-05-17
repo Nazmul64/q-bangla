@@ -26,7 +26,7 @@
                                   <th>Customer Name</th>
                                   <th>Customer Email</th>
                                   <th>Action</th>
-                              </tr>
+                              </tr> 
                          </thead>
                       <tbody>
                         <form method="POST" action="{{ route('checkemailoffer') }}">

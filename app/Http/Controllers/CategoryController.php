@@ -14,7 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-
+        return view('admin.category.index',[
+            'categories'=>Category::all(),
+        ]);
     }
 
     /**
@@ -51,7 +53,7 @@ class CategoryController extends Controller
             'category_photo' => $category_photos,
             'created_at'=>Carbon::now(),
        ]);
-        Toastr::success('Messages in here', 'Title', ["positionClass" => "toast-top-right"]);
+
        return back()->with('insert','Data Insert Successfully');
     }
 
@@ -60,7 +62,8 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $category=Category::find($id);
+      return view('admin.category.show',compact('category'));
     }
 
     /**
@@ -68,7 +71,8 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+      $category=Category::find($id);
+       return view('admin.category.edite',compact('category'));
     }
 
     /**
@@ -76,7 +80,35 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $category = Category::find($id);
+
+        if (!$category) {
+            return back()->with('error', 'Category not found');
+        }
+
+        if ($request->hasFile('new_category_photo')) {
+            // Delete old photo
+            $old_photo = $category->category_photo;
+            if ($old_photo && file_exists(public_path('uploads/category_photos/' . $old_photo))) {
+                unlink(public_path('uploads/category_photos/' . $old_photo));
+            }
+
+            $file = $request->file('new_category_photo');
+            $new_category_photo = uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/category_photos'), $new_category_photo);
+
+            $category->update([
+                'category_photo' => $new_category_photo,
+            ]);
+        }
+
+        $category->update([
+            'category_name' => $request->category_name,
+            'category_tagline' => $request->category_tagline,
+            'status'=>$request->status,
+        ]);
+
+        return back()->with('success', 'Category updated successfully');
     }
 
     /**
@@ -84,6 +116,9 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+      $category =Category::find($id);
+      unlink(public_path('uploads/category_photos/'.$category->category_photo));
+        $category->delete();
+        return back()->with('deleted','Data Deleted Successfully');
     }
 }
