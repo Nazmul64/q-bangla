@@ -10,6 +10,7 @@ use App\Http\Controllers\Goalobjective;
 use App\Http\Controllers\SitelogoController;
 use App\Http\Controllers\totalsolutionhere;
 use App\Http\Controllers\OurservicesController;
+use App\Http\Controllers\TeamController;
 // Route::get('/', function () {
 //     return view('frontend.index');
 // });
@@ -25,7 +26,12 @@ Route::POST('/user/password/update', [UserProfileController::class, 'userpasswor
 Route::get('/email/offer', [HomeController::class, 'emailoffer'])->name('email.offer');
 Route::get('/singlemail/offer/{id}', [HomeController::class, 'singlemailoffer'])->name('singlemailoffer');
 Route::POST('/check/email/offer', [HomeController::class, 'checkemailoffer'])->name('checkemailoffer');
+
+
 Route::get('/logo', [UserProfileController::class, 'logo'])->name('logo');
+
+Route::get('/generalView', [TeamController::class, 'generalView'])->name('generalView');
+
 
 Route::resource('category', BusinessSoluton::class);
 Route::resource('goal_category', Goalobjective::class);

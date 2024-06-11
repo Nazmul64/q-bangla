@@ -330,7 +330,7 @@
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="">Genealogy View </a></li>
+                                    <li><a href="{{ route('generalView') }}">Genealogy View </a></li>
                                     <li><a href="">Genealogy View </a></li>
                                 </ul>
                             </li>

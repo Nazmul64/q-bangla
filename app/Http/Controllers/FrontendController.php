@@ -18,7 +18,7 @@ class FrontendController extends Controller
         $goalobjective=Goalobjective::all();
         $totalsolution = totalsolutionheres::all();
         $sitelogo = sitemainlogo::all();
-        $ourservices = Ourservices::all();
+        $ourservices =Ourservices::all();
         return view('frontend.index',compact('businesssolution','goalobjective', 'sitelogo', 'totalsolution', 'ourservices'));
     }
 
