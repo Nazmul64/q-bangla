@@ -13,7 +13,7 @@
     <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="16x16">
 
     <!--title-->
-    <title>Q Bangla Mlm Business</title>
+    <title>{{ env('APP_NAME') }}</title>
 
     <!--build:css-->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/main.css') }}">

@@ -1,24 +1,24 @@
 @extends('layouts.app_auth')
 
 @section('login-from')
-    <div class="account-box">
+    <div class="account-box  mb-12">
         <div class="account-logo-box">
             <div class="text-center">
                 <a href="index.html">
                     <img src="assets/images/logo-dark.png" alt="" height="30">
                 </a>
             </div>
-            <h5 class="text-uppercase mb-1 mt-4">Sign In</h5>
+            <h5 class="text-uppercase mb-1">Sign In</h5>
             <p class="mb-0">Login to your User account</p>
         </div>
 
-        <div class="account-content mt-4">
+        <div class="account-content ">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="form-group row">
                     <div class="col-12">
-                        <label for="emailaddress"> Enter Full Name<span class="text-danger">*</span></label>
-                        <input class="form-control  @error('name') is-invalid @enderror " type="name" id="emailaddress"
+                        <label for="name"> Enter Full Name<span class="text-danger">*</span></label>
+                        <input class="form-control  @error('name') is-invalid @enderror " type="name" id="name"
                             name="name" placeholder="Enter Your Name">
                         @error('name')
                             <span class="text-danger">{{ $message }}</span>
@@ -27,10 +27,20 @@
                 </div>
                  <div class="form-group row">
                     <div class="col-12">
-                        <label for="emailaddress"> Enter Your Mobile Number<span class="text-danger">*</span></label>
-                        <input class="form-control  @error('number') is-invalid @enderror " type="number" id="emailaddress"
+                        <label for="number"> Enter Your Mobile Number<span class="text-danger">*</span></label>
+                        <input class="form-control  @error('number') is-invalid @enderror " type="number" id="number"
                             name="number" placeholder="Enter Your Mobile Number">
                         @error('number')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                 <div class="form-group row">
+                    <div class="col-12">
+                        <label for="emailaddress">Email address<span class="text-danger">*</span></label>
+                        <input class="form-control  @error('email') is-invalid @enderror " type="email"
+                            id="emailaddress" name="email" placeholder="Enter Your Email">
+                        @error('email')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
@@ -296,16 +306,7 @@
                         @enderror
                     </div>
                 </div>
-                 <div class="form-group row">
-                    <div class="col-12">
-                        <label for="emailaddress">Email address<span class="text-danger">*</span></label>
-                        <input class="form-control  @error('email') is-invalid @enderror " type="email"
-                            id="emailaddress" name="email" placeholder="Enter Your Email">
-                        @error('email')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-                    </div>
-                </div>
+
                 <div class="form-group row">
                     <div class="col-12">
                         <a href="page-recoverpw.html" class="text-muted float-right"><small>Forgot your
@@ -320,10 +321,10 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-12">
-                        <label for="password"> Confirmation Password<span class="text-danger">*</span></label>
+                        <label for="password_confirmation">  password_confirmation<span class="text-danger">*</span></label>
                         <input class="form-control @error('password_confirmation') is-invalid @enderror " type="password"
-                            name="password_confirmation" id="confirmation_password"
-                            placeholder="Enter your confirmation_password">
+                            name="password_confirmation" id="password_confirmation"
+                            placeholder="Enter your password_confirmation">
                         @error('password_confirmation')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -331,19 +332,21 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-12">
-                        <label for="password"> Enter Sponsor Username<span class="text-danger">*</span></label>
-                        <input class="form-control @error('Sponsor') is-invalid @enderror " type="text"
-                            name="sponsor_id" id="confirmation_password"
-                            placeholder="Enter your confirmation_password">
+                        <label for="sponsor_id"> Enter  sponsor_id<span class="text-danger">*</span></label>
+                        <input class="form-control @error('sponsor_id') is-invalid @enderror " type="text"
+                            name="sponsor_id" id="sponsor_id"
+                            placeholder="Enter your sponsor">
+                              <span id="spon_msg"></span>
                         @error('sponsor_id')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                 </div>
+
                 <div class="form-group row">
                     <div class="col-12">
-                        <label for="password"> Placement ID<span class="text-danger">*</span></label>
-                        <input class="form-control @error('Sponsor') is-invalid @enderror " type="text"
+                        <label for="placement_id"> Placement ID<span class="text-danger">*</span></label>
+                        <input class="form-control @error('placement_id') is-invalid @enderror " type="text"
                             name="placement_id" id="placement_id"
                             placeholder="Enter your placement_id">
                         @error('placement_id')
@@ -353,10 +356,10 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-12">
-                        <label for="password"> Set Placement Position<span class="text-danger">*</span></label>
+                        <label for="position_set"> Set Placement Position<span class="text-danger">*</span></label>
                     <select class="form-select form-control" aria-label="Default select example" name="position_set">
-                        <option value="1">Placement  Right Side</option>
-                        <option value="1">Placement  left Side</option>
+                        <option value="right"selected>Placement  Right Side</option>
+                        <option value="left">Placement  left Side</option>
                     </select>
                         @error('position_set')
                             <span class="text-danger">{{ $message }}</span>
@@ -367,7 +370,7 @@
                 <div class="form-group row text-center mt-2">
                     <div class="col-12">
                         <button class="btn btn-md btn-block btn-primary waves-effect waves-light"
-                            type="submit">Register Now</button>
+                            type="submit"id="reg_button">Register Now</button>
                     </div>
                 </div>
 
@@ -382,4 +385,34 @@
 
         </div>
     </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#sponsor_id').on('keyup', function(){
+            $('#spon_msg').text('Searching...');
+            var sponsor_id = this.value;
+            $.ajax({
+                url: "{{ route('search.sponsor_id') }}",
+                type: "POST",
+                data: {
+                    sponsor_id: sponsor_id,
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(result){
+                 if(result==0){
+                     $('#spon_msg').text('Not Valid');
+                     $('#spon_msg').css('color','red');
+                     $('#reg_button').hide();
+                 }else{
+                     $('#spon_msg').text(result);
+                     $('#spon_msg').css('color','green');
+                      $('#reg_button').show();
+                 }
+                },
+
+            });
+        });
+    });
+</script>
+
 @endsection

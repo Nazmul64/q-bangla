@@ -18,6 +18,11 @@
         <link href="{{ asset('uploads/dashboard/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('uploads/dashboard/assets/css/app.min.css') }}" rel="stylesheet" type="text/css"  id="app-stylesheet" />
 
+        <style>
+            #wrapper {
+                overflow: auto !important;
+            }
+        </style>
     </head>
 
     <body>
@@ -331,7 +336,18 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="{{ route('generalView') }}">Genealogy View </a></li>
-                                    <li><a href="">Genealogy View </a></li>
+                                    <li><a href="{{ route('partnerTeam') }}">partnerTeam </a></li>
+                                </ul>
+                            </li>
+                             <li>
+                                <a href="javascript: void(0);">
+                                    <i class="fe-sidebar"></i>
+                                    <span>Level Group</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="{{ route('generalView') }}">Genealogy View </a></li>
+                                    <li><a href="{{ route('partnerTeam') }}">partnerTeam </a></li>
                                 </ul>
                             </li>
                               @endif

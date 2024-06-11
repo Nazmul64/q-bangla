@@ -27,6 +27,24 @@ class User extends Authenticatable
         'sponsor_id',
         'placement_id',
         'position_set',
+        // 'referral_code',
+        // 'referral_id',
+        // 'right_referral_code',
+        // 'left_referral_code',
+        // 'own_id',
+        'total_deposite',
+        'direct_group',
+        'total_group',
+        'is_active',
+        'active_date',
+        'total_income',
+        'total_widthrawl',
+        'current_withdrawl_request',
+        'total_group_active',
+        'total_group_deposite',
+        'status',
+        'created_by'
+
 
     ];
 

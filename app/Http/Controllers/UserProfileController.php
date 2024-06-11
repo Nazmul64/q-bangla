@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class UserProfileController extends Controller
 {
@@ -34,6 +35,17 @@ class UserProfileController extends Controller
                 'name' => $request->name,
                 'profile_photo' => $fileName,
             ]);
+            // $referralCode =Str::random(10);
+            // if(isset($request->referral_code)){
+            //    $uerData=User::where('referral_code',$request->referral_code)->get();
+            //    if(count($uerData)>0){
+            //     User::insertGetId([
+            //         'name'=>$request->name,
+            //     ]);
+            //    }
+            // }else{
+
+            // }
 
             return back()->with('success', 'User name and photo updated successfully');
         }

@@ -34,7 +34,7 @@ class BusinessSoluton extends Controller
             'business_tag' => 'required',
             'business_title' => 'required',
             'business_description' => 'required',
-            'business_images' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adding image validation rules
+            'business_images' => 'required|image', // Adding image validation rules
         ]);
 
         if ($request->hasFile('business_images')) {

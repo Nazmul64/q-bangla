@@ -13,7 +13,7 @@ class totalsolutionhere extends Controller
      */
     public function index()
     {
-        $businesshere =totalsolutions::all();
+        $businesshere =totalsolutionheres::all();
         return view('admin.businesshere.index', compact('businesshere'));
 
     }
@@ -39,7 +39,7 @@ class totalsolutionhere extends Controller
             'solution_two' => 'required',
             'solution_three' => 'required',
             'solution_four' => 'required',
-            'solution_photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust file types and size as needed
+            'solution_photo' => 'required|image', // Adjust file types and size as needed
         ]);
 
         // Check if the file exists in the request
@@ -83,7 +83,7 @@ class totalsolutionhere extends Controller
      */
     public function edit(string $id)
     {
-        $businesshere =totalsolutions::find($id);
+        $businesshere = totalsolutionheres::find($id);
         return view('admin.businesshere.edit', compact('businesshere'));
     }
 
@@ -102,7 +102,7 @@ class totalsolutionhere extends Controller
         ]);
 
         // Find the total solution record by ID
-        $solution = totalsolutions::find($id);
+        $solution = totalsolutionheres::find($id);
 
         // Check if a new image file is uploaded
         if ($request->hasFile('new_business_images')) {

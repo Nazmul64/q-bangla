@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="authentication-bg bg-primary authentication-bg-pattern d-flex align-items-center pb-0 vh-100">
+<body class="authentication-bg bg-primary authentication-bg-pattern d-flex align-items-center pb-0">
 
     <div class="home-btn d-none d-sm-block">
         <a href="index.html"><i class="fas fa-home h2 text-white"></i></a>

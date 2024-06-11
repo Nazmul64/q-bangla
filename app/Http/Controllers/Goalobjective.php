@@ -32,7 +32,7 @@ class Goalobjective extends Controller
         $request->validate([
             'goal_title' => 'required',
             'goal_description' => 'required',
-            'goal_photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust the file type and size as needed
+            'goal_photo' => 'required|image', // Adjust the file type and size as needed
         ]);
 
         if ($request->hasFile('goal_photo')) {
