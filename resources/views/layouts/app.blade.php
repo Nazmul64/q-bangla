@@ -263,19 +263,42 @@
                                     <span>  EmailOffer </span>
                                 </a>
                             </li>
-                             <li>
+
+                            <li>
                                 <a href="javascript: void(0);">
                                     <i class="fe-sidebar"></i>
-                                    <span>Category</span>
+                                    <span>Business Solutions</span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="{{ route('category.create') }}">Add Category</a></li>
-                                    <li><a href="{{ route('category.index') }}">List Category</a></li>
+                                    <li><a href="{{ route('category.create') }}">Add Business  </a></li>
+                                    <li><a href="{{ route('category.index') }}">List Business </a></li>
                                 </ul>
                             </li>
-                            @endif
+                            <li>
+                                <a href="javascript: void(0);">
+                                    <i class="fe-sidebar"></i>
+                                    <span>Goal Objective</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="{{ route('goal_category.create') }}">Add Goal  </a></li>
+                                    <li><a href="{{ route('goal_category.index') }}">List Goal </a></li>
+                                </ul>
+                            </li>
+                             <li>
+                                <a href="javascript: void(0);">
+                                    <i class="fe-sidebar"></i>
+                                    <span>Site Logo</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="{{ route('sitelogo.create') }}">Add Logo  </a></li>
+                                    <li><a href="{{ route('sitelogo.index') }}">List Goal </a></li>
+                                </ul>
+                            </li>
 
+                            @endif
 
 
 

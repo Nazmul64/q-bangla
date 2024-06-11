@@ -1,3801 +1,649 @@
-<!DOCTYPE html>
-<html lang="zxx">
+@extends('frontend.master')
 
+@section('main_content')
 
-<!-- Mirrored from htmldemo.net/jesco/jesco/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Mar 2024 17:14:34 GMT -->
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="robots" content="index, follow" />
-    <title>Jesco - Fashoin eCommerce HTML Template</title>
-    <meta name="description" content="Jesco - Fashoin eCommerce HTML Template" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <div class="main">
 
-    <!-- Add site Favicon -->
-    <link rel="shortcut icon" href="{{ asset('frontend/assets/images/favicon/favicon.ico') }}" type="image/png">
-
-    <!-- vendor css (Icon Font) -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/vendor/bootstrap.bundle.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/vendor/pe-icon-7-stroke.css') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/vendor/font.awesome.css') }}" />
-
-    <!-- plugins css (All Plugins Files) -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/animate.css') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/swiper-bundle.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/jquery-ui.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/nice-select.css') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/venobox.css') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}" />
-
-</head>
-
-<body>
-
-    <!-- Top Bar -->
-
-    <div class="header-to-bar"> HELLO EVERYONE! 25% Off All Products </div>
-
-    <!-- Top Bar -->
-    <!-- Header Area Start -->
-    <header>
-        <div class="header-main sticky-nav ">
-            <div class="container position-relative">
+        <!--hero section start-->
+        <section class="section pt-9 pb-9 section-header text-white gradient-overly-right-color" style="background: url('assets/img/hero-bg10.jpg')no-repeat center center / cover">
+            <div class="container">
                 <div class="row">
-                    <div class="col-auto align-self-center">
-                        <div class="header-logo">
-                            <a href="index.html"><img src="{{ asset('frontend') }}/assets/images/logo/logo.png" alt="Site Logo" /></a>
+                    @foreach ($businesssolution as $businesssolution )
+                    <div class="col-md-7 col-lg-6">
+                        <div class="hero-slider-content">
+                            <span class="text-uppercase">{{ $businesssolution->business_tag }}</span>
+                            <h1 class="display-2">{{ $businesssolution->business_title }}</h1>
+                            <p class="lead">{{ $businesssolution->business_description }}</p>
+                            <a href="#" class="btn btn-secondary mt-4">Get Start Now</a>
                         </div>
                     </div>
-                    <div class="col align-self-center d-none d-lg-block">
-                        <div class="main-menu">
-                            <ul>
-                                <li class="dropdown"><a href="#">Home <i class="pe-7s-angle-down"></i></a>
-                                    <ul class="sub-menu">
-                                        <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index-2.html">Home 2</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown position-static"><a href="#">Shop <i
-                                            class="pe-7s-angle-down"></i></a>
-                                    <ul class="mega-menu d-block">
-                                        <li class="d-flex">
-                                            <ul class="d-block">
+                    <div class="col-md-7 col-lg-6">
+                        <div class="hero-slider-content">
+                            <img  height="400px"  src="{{ asset('frontend/business_photos') }}/{{ $businesssolution->business_images }}" alt="dot">
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+        <!--hero section end-->
 
-                                                <li class="title"><a href="#">Shop Page</a></li>
-                                                <li><a href="shop-3-column.html">Shop 3 Column</a></li>
-                                                <li><a href="shop-4-column.html">Shop 4 Column</a></li>
-                                                <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
-                                                <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                                                <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a>
-                                                </li>
-                                                <li><a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a>
-                                                </li>
-                                            </ul>
-                                            <ul class="d-block">
-                                                <li class="title"><a href="#">product Details Page</a></li>
-                                                <li><a href="single-product.html">Product Single</a></li>
-                                                <li><a href="single-product-variable.html">Product Variable</a></li>
-                                                <li><a href="single-product-affiliate.html">Product Affiliate</a></li>
-                                                <li><a href="single-product-group.html">Product Group</a></li>
-                                                <li><a href="single-product-tabstyle-2.html">Product Tab 2</a></li>
-                                                <li><a href="single-product-tabstyle-3.html">Product Tab 3</a></li>
-                                            </ul>
-                                            <ul class="d-block">
-                                                <li class="title"><a href="#">Single Product Page</a></li>
-                                                <li><a href="single-product-slider.html">Product Slider</a></li>
-                                                <li><a href="single-product-gallery-left.html">Product Gallery Left</a>
-                                                </li>
-                                                <li><a href="single-product-gallery-right.html">Product Gallery
-                                                        Right</a>
-                                                </li>
-                                                <li><a href="single-product-sticky-left.html">Product Sticky Left</a>
-                                                </li>
-                                                <li><a href="single-product-sticky-right.html">Product Sticky Right</a>
-                                                </li>
-                                            </ul>
-                                            <ul class="d-block">
-                                                <li class="title"><a href="#">Other Shop Pages</a></li>
-                                                <li><a href="cart.html">Cart Page</a></li>
-                                                <li><a href="checkout.html">Checkout Page</a></li>
-                                                <li><a href="compare.html">Compare Page</a></li>
-                                                <li><a href="wishlist.html">Wishlist Page</a></li>
-                                                <li><a href="my-account.html">Account Page</a></li>
-                                                <li><a href="login.html">Login & Register Page</a></li>
-                                                <li><a href="empty-cart.html">Empty Cart Page</a></li>
-                                            </ul>
-                                            <ul class="d-block">
-                                                <li class="title"><a href="#">Pages</a></li>
-                                                <li><a href="404.html">404 Page</a></li>
-                                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                                <li><a href="faq.html">Faq Page</a></li>
-                                                <li><a href="coming-soon.html">Coming Soon Page</a></li>
+        <!--promo section start-->
+        <section class="section section-sm pb-0 mt-n8 z-5 position-relative">
+            <div class="container">
+                <div class="row">
+                    @foreach ($goalobjective as $goalobjective )
+                    <div class="col-md-6 col-lg-4 mb-md-4 mb-4 mb-lg-0">
+                        <div class="single-promo-block promo-hover-bg-1 hover-image shadow p-5 rounded-custom bg-white">
+                            <img  height="50px" width="70px" src="{{ asset('frontend/object_photos') }}/{{ $goalobjective->goal_photo }}" alt="dot" class="img-fluid">
+                            <div class="promo-block-content">
+                                <h5>{{ $goalobjective->goal_title }}</h5>
+                                <p class="mb-0">{{ $goalobjective->goal_description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+        <!--promo section end-->
 
-                                            </ul>
-                                        </li>
-                                        <li>
+        <!--about section start-->
+        <section class="section section-lg  ">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-md-12 col-lg-6 mb-4 mb-md-4 mb-lg-0">
+                        <div class="card bg-primary position-relative  shadow-lg fancy-radius p-3">
+                            <div class="dot-shape-top position-absolute">
+                                <img    src="{{ asset('frontend') }}/assets/img/color-shape.svg" alt="dot" class="img-fluid">
+                            </div>
+                            <img class="fancy-radius img-fluid"    src="{{ asset('frontend') }}/assets/img/about-us-2.jpg" alt="modern desk">
+                            <div class="dot-shape position-absolute bottom-0">
+                                <img    src="{{ asset('frontend') }}/assets/img/dot-shape.png" alt="dot">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-5">
+                        <div class="video-promo-content">
+                            <h2>Total Solutions for Your Business Here</h2>
+                            <p class="lead">Interactively develop timely niche markets before extensive imperatives. Professionally
+                                repurpose strategies.</p>
+                            <ul class="list-unstyled tech-feature-list">
+                                <li class="py-1"><span class="icon icon-xs mr-2 text-secondary"> <i class="ti-control-forward"></i></span><strong>Creative</strong> Websites Design</li>
+                                <li class="py-1"><span class="icon icon-xs mr-2 text-secondary"> <i class="ti-control-forward"></i></span><strong>Accounting</strong> Procedures Guidebook</li>
+                                <li class="py-1"><span class="icon icon-xs mr-2 text-secondary"> <i class="ti-control-forward"></i></span><strong>Cost</strong> Accounting Fundamentals</li>
+                                <li class="py-1"><span class="icon icon-xs mr-2 text-secondary"> <i class="ti-control-forward"></i></span><strong>SEO</strong> Optimization Services</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary  mt-3">View Services</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--about section end-->
 
-                                            <ul class="menu-banner w-100">
-                                                <li>
-                                                    <a class="p-0" href="shop-left-sidebar.html"><img
-                                                            class="img-responsive w-100"
-                                                            src="{{ asset('frontend') }}/assets/images/banner/7.jpg" alt=""></a>
-                                                </li>
-                                                <li>
-                                                    <a class="p-0" href="shop-left-sidebar.html"><img
-                                                            class="img-responsive w-100"
-                                                            src="{{ asset('frontend') }}/assets/images/banner/8.jpg" alt=""></a>
-                                                </li>
-                                                <li>
-                                                    <a class="p-0" href="shop-left-sidebar.html"><img
-                                                            class="img-responsive w-100"
-                                                            src="{{ asset('frontend') }}/assets/images/banner/9.jpg" alt=""></a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+        <!--services section start-->
+        <section class="section services-section ptb-100 bg-soft">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="section-heading text-center mb-5">
+                            <h2>We Provide Quality Services</h2>
+                            <p class="lead">Efficiently aggregate end-to-end core competencies without maintainable. Dynamically
+                                foster tactical solutions without enabled value.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 mb-4 mb-md-4">
+                        <div class="services-single d-flex p-5 shadow-sm bg-white rounded">
+                            <div class="icon icon-lg mr-4 text-secondary">
+                                <i class="ti-announcement"></i>
+                            </div>
+                            <div class="services-content-wrap">
+                                <h3 class="h6">Marketing Services</h3>
+                                <p>Progressively empower business "outside the box" thinking with resource-leveling
+                                    partnerships.</p>
+                                <a href="services-details.html" class="link-with-icon text-default font-small font-weight-bold" target="_blank">Read more <span> <i class="fas fa-angle-right"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 mb-4 mb-md-4">
+                        <div class="services-single d-flex p-5 shadow-sm bg-white rounded">
+                            <div class="icon icon-lg mr-4 text-secondary">
+                                <i class="ti-light-bulb"></i>
+                            </div>
+                            <div class="services-content-wrap">
+                                <h3 class="h6">Web App Development</h3>
+                                <p>Quickly pontificate holistic e-commerce rather than goal web-readiness enhance inexpensive.</p>
+                                <a href="services-details.html" class="link-with-icon text-default font-small font-weight-bold" target="_blank">Read more <span> <i class="fas fa-angle-right"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 mb-4 mb-md-4">
+                        <div class="services-single d-flex p-5 shadow-sm bg-white rounded">
+                            <div class="icon icon-lg mr-4 text-secondary">
+                                <i class="ti-headphone-alt"></i>
+                            </div>
+                            <div class="services-content-wrap">
+                                <h3 class="h6">24/7 Call Center Service</h3>
+                                <p>Authoritatively reinvent multimedia based niches with global portals orchestrate client-centered .</p>
+                                <a href="services-details.html" class="link-with-icon text-default font-small font-weight-bold" target="_blank">Read more <span> <i class="fas fa-angle-right"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 mb-4 mb-md-4">
+                        <div class="services-single d-flex p-5 shadow-sm bg-white rounded">
+                            <div class="icon icon-lg mr-4 text-secondary">
+                                <i class="ti-bell"></i>
+                            </div>
+                            <div class="services-content-wrap">
+                                <h3 class="h6">Social Media Marketing</h3>
+                                <p>Assertively leverage other's standardized e-services with fully tested e-commerce synergistic. </p>
+                                <a href="services-details.html" class="link-with-icon text-default font-small font-weight-bold" target="_blank">Read more <span> <i class="fas fa-angle-right"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 mb-4 mb-md-4">
+                        <div class="services-single d-flex p-5 shadow-sm bg-white rounded">
+                            <div class="icon icon-lg mr-4 text-secondary">
+                                <i class="ti-briefcase"></i>
+                            </div>
+                            <div class="services-content-wrap">
+                                <h3 class="h6">Corporate Business</h3>
+                                <p>Enthusiastically scale client-centric supply chains vis-a-vis enabled benefits empower global core.</p>
+                                <a href="services-details.html" class="link-with-icon text-default font-small font-weight-bold" target="_blank">Read more <span> <i class="fas fa-angle-right"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 mb-4 mb-md-4">
+                        <div class="services-single d-flex p-5 shadow-sm bg-white rounded">
+                            <div class="icon icon-lg mr-4 text-secondary">
+                                <i class="ti-vector"></i>
+                            </div>
+                            <div class="services-content-wrap">
+                                <h3 class="h6">Creative Consultancy</h3>
+                                <p>Conveniently productize corporate imperatives for innovative best practices ideas ethical change.</p>
+                                <a href="services-details.html" class="link-with-icon text-default font-small font-weight-bold" target="_blank">Read more <span> <i class="fas fa-angle-right"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--services section end-->
+
+        <!--cta section start-->
+        <section class="section py-0" style="background: url('assets/img/hero-bg11.jpg')no-repeat center fixed">
+            <div class="section-lg section bg-gradient-primary text-white  ">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-9 col-md-10 col-lg-9">
+                            <div class="section-title text-center mb-5">
+                                <h2>Download Our Business Apps</h2>
+                                <p class="lead">Building your Apps helps attract more potential clients. Our integrated marketing team will promote enabled internal or work high-impact convergence.</p>
+                            </div>
+                            <div class="download-btn-wrap text-center">
+                                <a class="btn btn-pill border border-variant-light  text-white  shadow-hover mr-md-3 mb-4 mb-md-3 mb-lg-0" href="#">
+                                    <div class="d-flex align-items-center">
+                                        <span class="icon icon-md mr-3 h-auto"><i class="fab fa-apple"></i></span>
+                                        <div class="d-block text-left">
+                                            <small class="font-small ">Download on the</small>
+                                            <div class="h6 mb-0">App Store</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="btn btn-pill border border-variant-light  text-white  shadow-hover mr-md-3 mb-4 mb-md-3 mb-lg-0" href="#">
+                                    <div class="d-flex align-items-center">
+                                        <span class="icon icon-md mr-3 h-auto"><i class="fab fa-google-play"></i></span>
+                                        <div class="d-block text-left">
+                                            <small class="font-small ">Download on the</small>
+                                            <div class="h6 mb-0">Google Play</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="btn btn-pill border border-variant-light  text-white  shadow-hover" href="#">
+                                    <div class="d-flex align-items-center">
+                                        <span class="icon icon-md mr-3 h-auto"><i class="fab fa-windows"></i></span>
+                                        <div class="d-block text-left">
+                                            <small class="font-small ">Download on the</small>
+                                            <div class="h6 mb-0">Windows</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--cta section end-->
+
+        <!--portfolio section start-->
+        <section class="section section-lg">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-heading text-center mb-5">
+                            <h2>Check Our Quality Work</h2>
+                            <p class="lead">Dynamically pursue reliable convergence rather than 24/7 process improvements
+                                develop end-to-end customer service.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="d-flex justify-content-center pb-2">
+                            <ul class="nav nav-pills custom-pill" role="tablist">
+                                <li class="nav-item">
+                                    <a class="btn btn-pill btn-outline-primary" data-mixitup-control data-filter="all">All</a>
                                 </li>
-                                <li class="dropdown "><a href="#">Blogs <i class="pe-7s-angle-down"></i></a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog-grid.html">Blog Grid Page</a></li>
-                                        <li><a href="blog-grid-left-sidebar.html">Grid Left Sidebar</a></li>
-                                        <li><a href="blog-grid-right-sidebar.html">Grid Right Sidebar</a></li>
-                                        <li><a href="blog-single.html">Blog Single Page</a></li>
-                                        <li><a href="blog-single-left-sidebar.html">Single Left Sidebar</a></li>
-                                        <li><a href="blog-single-right-sidebar.html">Single Right Sidbar</a>
-                                    </ul>
+                                <li class="nav-item">
+                                    <a class="btn btn-pill btn-outline-primary" data-mixitup-control data-filter=".branding">Branding</a>
                                 </li>
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
+                                <li class="nav-item">
+                                    <a class="btn btn-pill btn-outline-primary" data-mixitup-control data-filter=".animation">Animation</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="btn btn-pill btn-outline-primary" data-mixitup-control data-filter=".other">Others</a>
+                                </li>
                             </ul>
                         </div>
-                    </div>
-                    <!-- Header Action Start -->
-                    <div class="col col-lg-auto align-self-center pl-0">
-                        <div class="header-actions">
-                            <a href="login.html" class="header-action-btn login-btn" data-bs-toggle="modal"
-                                data-bs-target="#loginActive">Sign In</a>
-                            <!-- Single Wedge Start -->
-                            <a href="#" class="header-action-btn" data-bs-toggle="modal" data-bs-target="#searchActive">
-                                <i class="pe-7s-search"></i>
-                            </a>
-                            <!-- Single Wedge End -->
-                            <!-- Single Wedge Start -->
-                            <a href="#offcanvas-wishlist" class="header-action-btn offcanvas-toggle">
-                                <i class="pe-7s-like"></i>
-                            </a>
-                            <!-- Single Wedge End -->
-                            <a href="#offcanvas-cart"
-                                class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
-                                <i class="pe-7s-shopbag"></i>
-                                <span class="header-action-num">01</span>
-                                <!-- <span class="cart-amount">€30.00</span> -->
-                            </a>
-                            <a href="#offcanvas-mobile-menu"
-                                class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
-                                <i class="pe-7s-menu"></i>
-                            </a>
-                        </div>
-                        <!-- Header Action End -->
-                    </div>
-                </div>
-            </div>
-    </header>
-    <!-- Header Area End -->
-    <div class="offcanvas-overlay"></div>
-
-    <!-- OffCanvas Wishlist Start -->
-    <div id="offcanvas-wishlist" class="offcanvas offcanvas-wishlist">
-        <div class="inner">
-            <div class="head">
-                <span class="title">Wishlist</span>
-                <button class="offcanvas-close">×</button>
-            </div>
-            <div class="body customScroll">
-                <ul class="minicart-product-list">
-                    <li>
-                        <a href="single-product.html" class="image"><img src="{{ asset('frontend') }}/assets/images/product-image/1.jpg"
-                                alt="Cart product Image"></a>
-                        <div class="content">
-                            <a href="single-product.html" class="title">Women's Elizabeth Coat</a>
-                            <span class="quantity-price">1 x <span class="amount">$21.86</span></span>
-                            <a href="#" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="single-product.html" class="image"><img src="{{ asset('frontend') }}/assets/images/product-image/2.jpg"
-                                alt="Cart product Image"></a>
-                        <div class="content">
-                            <a href="single-product.html" class="title">Long sleeve knee length</a>
-                            <span class="quantity-price">1 x <span class="amount">$13.28</span></span>
-                            <a href="#" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="single-product.html" class="image"><img src="{{ asset('frontend') }}/assets/images/product-image/3.jpg"
-                                alt="Cart product Image"></a>
-                        <div class="content">
-                            <a href="single-product.html" class="title">Cool Man Wearing Leather</a>
-                            <span class="quantity-price">1 x <span class="amount">$17.34</span></span>
-                            <a href="#" class="remove">×</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="foot">
-                <div class="buttons">
-                    <a href="wishlist.html" class="btn btn-dark btn-hover-primary mt-30px">view wishlist</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- OffCanvas Wishlist End -->
-    <!-- OffCanvas Cart Start -->
-    <div id="offcanvas-cart" class="offcanvas offcanvas-cart">
-        <div class="inner">
-            <div class="head">
-                <span class="title">Cart</span>
-                <button class="offcanvas-close">×</button>
-            </div>
-            <div class="body customScroll">
-                <ul class="minicart-product-list">
-                    <li>
-                        <a href="single-product.html" class="image"><img src="{{ asset('frontend') }}/assets/images/product-image/1.jpg"
-                                alt="Cart product Image"></a>
-                        <div class="content">
-                            <a href="single-product.html" class="title">Women's Elizabeth Coat</a>
-                            <span class="quantity-price">1 x <span class="amount">$18.86</span></span>
-                            <a href="#" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="single-product.html" class="image"><img src="{{ asset('frontend') }}/assets/images/product-image/2.jpg"
-                                alt="Cart product Image"></a>
-                        <div class="content">
-                            <a href="single-product.html" class="title">Long sleeve knee length</a>
-                            <span class="quantity-price">1 x <span class="amount">$43.28</span></span>
-                            <a href="#" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="single-product.html" class="image"><img src="{{ asset('frontend') }}/assets/images/product-image/3.jpg"
-                                alt="Cart product Image"></a>
-                        <div class="content">
-                            <a href="single-product.html" class="title">Cool Man Wearing Leather</a>
-                            <span class="quantity-price">1 x <span class="amount">$37.34</span></span>
-                            <a href="#" class="remove">×</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="foot">
-                <div class="buttons mt-30px">
-                    <a href="cart.html" class="btn btn-dark btn-hover-primary mb-30px">view cart</a>
-                    <a href="checkout.html" class="btn btn-outline-dark current-btn">checkout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- OffCanvas Cart End -->
-
-    <!-- OffCanvas Menu Start -->
-    <div id="offcanvas-mobile-menu" class="offcanvas offcanvas-mobile-menu">
-        <button class="offcanvas-close"></button>
-
-        <div class="inner customScroll">
-
-            <div class="offcanvas-menu mb-4">
-                <ul>
-                    <li><a href="#"><span class="menu-text">Home</span></a>
-                        <ul class="sub-menu">
-                            <li><a href="index.html"><span class="menu-text">Home 1</span></a></li>
-                            <li><a href="index-2.html"><span class="menu-text">Home 2</span></a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><span class="menu-text">Shop</span></a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="#"><span class="menu-text">Shop Page</span></a>
-                                <ul class="sub-menu">
-                                    <li class="title"><a href="#">Shop Page</a></li>
-                                    <li><a href="shop-3-column.html">Shop 3 Column</a></li>
-                                    <li><a href="shop-4-column.html">Shop 4 Column</a></li>
-                                    <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
-                                    <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                                    <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a></li>
-                                    <li><a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#"><span class="menu-text">product Details Page</span></a>
-                                <ul class="sub-menu">
-                                    <li><a href="single-product.html">Product Single</a></li>
-                                    <li><a href="single-product-variable.html">Product Variable</a></li>
-                                    <li><a href="single-product-affiliate.html">Product Affiliate</a></li>
-                                    <li><a href="single-product-group.html">Product Group</a></li>
-                                    <li><a href="single-product-tabstyle-2.html">Product Tab 2</a></li>
-                                    <li><a href="single-product-tabstyle-3.html">Product Tab 3</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#"><span class="menu-text">Single Product Page</span></a>
-                                <ul class="sub-menu">
-                                    <li><a href="single-product-slider.html">Product Slider</a></li>
-                                    <li><a href="single-product-gallery-left.html">Product Gallery Left</a>
-                                    </li>
-                                    <li><a href="single-product-gallery-right.html">Product Gallery Right</a>
-                                    </li>
-                                    <li><a href="single-product-sticky-left.html">Product Sticky Left</a></li>
-                                    <li><a href="single-product-sticky-right.html">Product Sticky Right</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#"><span class="menu-text">Other Shop Pages</span></a>
-                                <ul class="sub-menu">
-                                    <li><a href="cart.html">Cart Page</a></li>
-                                    <li><a href="checkout.html">Checkout Page</a></li>
-                                    <li><a href="compare.html">Compare Page</a></li>
-                                    <li><a href="wishlist.html">Wishlist Page</a></li>
-                                    <li><a href="my-account.html">Account Page</a></li>
-                                    <li><a href="login.html">Login & Register Page</a></li>
-                                    <li><a href="empty-cart.html">Empty Cart Page</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#"><span class="menu-text">Pages</span></a>
-                                <ul class="sub-menu">
-                                    <li><a href="404.html">404 Page</a></li>
-                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a href="faq.html">Faq Page</a></li>
-                                    <li><a href="coming-soon.html">Coming Soon Page</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><span class="menu-text">Blog</span></a>
-                        <ul class="sub-menu">
-                            <li><a href="blog-grid.html">Blog Grid Page</a></li>
-                            <li><a href="blog-grid-left-sidebar.html">Grid Left Sidebar</a></li>
-                            <li><a href="blog-grid-right-sidebar.html">Grid Right Sidebar</a></li>
-                            <li><a href="blog-single.html">Blog Single Page</a></li>
-                            <li><a href="blog-single-left-sidebar.html">Single Left Sidebar</a></li>
-                            <li><a href="blog-single-right-sidebar.html">Single Right Sidbar</a>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-            <!-- OffCanvas Menu End -->
-            <div class="offcanvas-social mt-auto">
-                <ul>
-                    <li>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-google"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-youtube"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- OffCanvas Menu End -->
-
-    <!-- Hero/Intro Slider Start -->
-    <div class="section ">
-        <div class="hero-slider swiper-container slider-nav-style-1 slider-dot-style-1">
-            <!-- Hero slider Active -->
-            <div class="swiper-wrapper">
-                <!-- Single slider item -->
-                <div class="hero-slide-item-2 slider-height swiper-slide d-flex bg-color1">
-                    <div class="container align-self-center">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-5 col-md-5 col-sm-5 align-self-center sm-center-view">
-                                <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
-                                    <span class="category">Sale 45% Off</span>
-                                    <h2 class="title-1">Exclusive New<br> Offer 2021</h2>
-                                    <a href="shop-left-sidebar.html" class="btn btn-lg btn-primary btn-hover-dark"> Shop
-                                        Now <i class="fa fa-shopping-basket ml-15px" aria-hidden="true"></i></a>
+                        <div class="portfolio-container" id="MixItUp">
+                            <div class="mix portfolio-item branding" data-ref="mixitup-target">
+                                <div class="portfolio-wrapper border border-variant-soft rounded bg-soft p-2">
+                                    <a href="project-details.html" target="_blank">
+                                        <div class="content-overlay"></div>
+                                        <img class="img-fluid"    src="{{ asset('frontend') }}/assets/img/portfolios/3.jpg" alt="portfolio" />
+                                        <div class="content-details fadeIn-bottom text-white">
+                                            <h5 class="text-white mb-1">Creative Design</h5>
+                                            <p>Design</p>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
-                            <div
-                                class="col-xl-6 col-lg-7 col-md-7 col-sm-7 d-flex justify-content-center position-relative">
-                                <div class="show-case">
-                                    <div class="hero-slide-image">
-                                        <img src="{{ asset('frontend') }}/assets/images/slider-image/slider-2-1.png" alt="" />
-                                    </div>
+                            <div class="mix portfolio-item other animation" data-ref="mixitup-target">
+                                <div class="portfolio-wrapper border border-variant-soft rounded bg-soft p-2">
+                                    <a href="project-details.html" target="_blank">
+                                        <div class="content-overlay"></div>
+                                        <img class="img-fluid"    src="{{ asset('frontend') }}/assets/img/portfolios/2.jpg" alt="portfolio" />
+                                        <div class="content-details fadeIn-bottom text-white">
+                                            <h5 class="text-white mb-1">Web UI/UX Design</h5>
+                                            <p>Web, Design</p>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single slider item -->
-                <div class="hero-slide-item-2 slider-height swiper-slide d-flex bg-color2">
-                    <div class="container align-self-center">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-5 col-md-5 col-sm-5 align-self-center sm-center-view">
-                                <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
-                                    <span class="category">Sale 45% Off</span>
-                                    <h2 class="title-1">Exclusive New<br> Offer 2021</h2>
-                                    <a href="shop-left-sidebar.html" class="btn btn-lg btn-primary btn-hover-dark"> Shop
-                                        Now <i class="fa fa-shopping-basket ml-15px" aria-hidden="true"></i></a>
+                            <div class="mix portfolio-item animation" data-ref="mixitup-target">
+                                <div class="portfolio-wrapper border border-variant-soft rounded bg-soft p-2">
+                                    <a href="project-details.html" target="_blank">
+                                        <div class="content-overlay"></div>
+                                        <img class="img-fluid"    src="{{ asset('frontend') }}/assets/img/portfolios/4.jpg" alt="portfolio" />
+                                        <div class="content-details fadeIn-bottom text-white">
+                                            <h5 class="text-white mb-1">Corporate Flyer Design</h5>
+                                            <p>Flyer Design</p>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
-                            <div
-                                class="col-xl-6 col-lg-7 col-md-7 col-sm-7 d-flex justify-content-center position-relative">
-                                <div class="show-case">
-                                    <div class="hero-slide-image">
-                                        <img src="{{ asset('frontend') }}/assets/images/slider-image/slider-2-2.png" alt="" />
-                                    </div>
+                            <div class="mix portfolio-item branding" data-ref="mixitup-target">
+                                <div class="portfolio-wrapper border border-variant-soft rounded bg-soft p-2">
+                                    <a href="project-details.html" target="_blank">
+                                        <div class="content-overlay"></div>
+                                        <img class="img-fluid"    src="{{ asset('frontend') }}/assets/img/portfolios/1.jpg" alt="portfolio" />
+                                        <div class="content-details fadeIn-bottom text-white">
+                                            <h5 class="text-white mb-1">Web UI/UX Design</h5>
+                                            <p>Web, Design</p>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
+                            <div class="mix portfolio-item animation other" data-ref="mixitup-target">
+                                <div class="portfolio-wrapper border border-variant-soft rounded bg-soft p-2">
+                                    <a href="project-details.html" target="_blank">
+                                        <div class="content-overlay"></div>
+                                        <img class="img-fluid"    src="{{ asset('frontend') }}/assets/img/portfolios/5.jpg" alt="portfolio" />
+                                        <div class="content-details fadeIn-bottom text-white">
+                                            <h5 class="text-white mb-1">Wall Painting Design</h5>
+                                            <p>Painting Design</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mix portfolio-item branding " data-ref="mixitup-target">
+                                <div class="portfolio-wrapper border border-variant-soft rounded bg-soft p-2">
+                                    <a href="project-details.html" target="_blank">
+                                        <div class="content-overlay"></div>
+                                        <img class="img-fluid"    src="{{ asset('frontend') }}/assets/img/portfolios/6.jpg" alt="portfolio" />
+                                        <div class="content-details fadeIn-bottom text-white">
+                                            <h5 class="text-white mb-1">Corporate Identity Design</h5>
+                                            <p>Corporate Design</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="gap"></div>
+                            <div class="gap"></div>
+                            <div class="gap"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination swiper-pagination-white"></div>
-            <!-- Add Arrows -->
-            <div class="swiper-buttons">
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-    </div>
+        </section>
+        <!--portfolio section end-->
 
-    <!-- Hero/Intro Slider End -->
-
-    <!-- Feature Area Srart -->
-    <div class="feature-area  mt-n-65px">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <!-- single item -->
-                    <div class="single-feature">
-                        <div class="feature-icon">
-                            <img src="{{ asset('frontend') }}/assets/images/icons/1.png" alt="">
-                        </div>
-                        <div class="feature-content">
-                            <h4 class="title">Free Shipping</h4>
-                            <span class="sub-title">Capped at $39 per order</span>
+        <!--blog section start-->
+        <section class="section section-lg bg-soft">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-heading text-center mb-5">
+                            <h2>Our Latest News</h2>
+                            <p class="lead">Dynamically pursue reliable convergence rather than 24/7 process improvements
+                                develop end-to-end customer service.</p>
                         </div>
                     </div>
                 </div>
-                <!-- single item -->
-                <div class="col-lg-4 col-md-6 mb-md-30px mb-lm-30px mt-lm-30px">
-                    <div class="single-feature">
-                        <div class="feature-icon">
-                            <img src="{{ asset('frontend') }}/assets/images/icons/2.png" alt="">
-                        </div>
-                        <div class="feature-content">
-                            <h4 class="title">Card Payments</h4>
-                            <span class="sub-title">12 Months Installments</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- single item -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-feature">
-                        <div class="feature-icon">
-                            <img src="{{ asset('frontend') }}/assets/images/icons/3.png" alt="">
-                        </div>
-                        <div class="feature-content">
-                            <h4 class="title">Easy Returns</h4>
-                            <span class="sub-title">Shop With Confidence</span>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Feature Area End -->
-
-    <!-- Product Area Start -->
-    <div class="product-area pt-100px pb-100px">
-        <div class="container">
-            <!-- Section Title & Tab Start -->
-            <div class="row">
-                <!-- Section Title Start -->
-                <div class="col-12">
-                    <div class="section-title text-center mb-0">
-                        <h2 class="title">#products</h2>
-                        <!-- Tab Start -->
-                        <div class="nav-center">
-                            <ul class="product-tab-nav nav align-items-center justify-content-center">
-                                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab"
-                                        href="#tab-product--all">All</a></li>
-                                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-                                        href="#tab-product--new">New</a>
-                                </li>
-                                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-                                        href="#tab-product-men">Men</a></li>
-                                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-                                        href="#tab-product-women">Women</a></li>
-                                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-                                        href="#tab-product-kids">Kids</a></li>
-                            </ul>
-                        </div>
-                        <!-- Tab End -->
-                    </div>
-                </div>
-                <!-- Section Title End -->
-            </div>
-            <!-- Section Title & Tab End -->
-
-            <div class="row">
-                <div class="col">
-                    <div class="tab-content mb-30px0px">
-                        <!-- 1st tab start -->
-                        <div class="tab-pane fade show active" id="tab-product--all">
-                            <div class="row">
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="200">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/1.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/2.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="new">New</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">( 5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Women's Elizabeth Coat
-                                                </a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="400">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/3.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/4.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="sale">-10%</span>
-                                                <span class="new">New</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 80%"></span>
-                                                </span>
-                                                <span class="rating-num">( 4 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Ardene Microfiber
-                                                    Tights</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                                <span class="old">$48.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="600">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/5.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/6.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="sale">-7%</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 90%"></span>
-                                                </span>
-                                                <span class="rating-num">( 4.5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Women's Long Sleeve
-                                                    Shirts</a></h5>
-                                            <span class="price">
-                                                <span class="new">$30.50</span>
-                                                <span class="old">$38.00</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="800">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/7.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/8.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="new">Sale</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 70%"></span>
-                                                </span>
-                                                <span class="rating-num">( 3.5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Parrera Sunglasses -
-                                                    Lomashop</a></h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-md-30px mb-lm-30px"
-                                    data-aos="fade-up" data-aos-delay="200">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/2.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/10.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="sale">-5%</span>
-                                                <span class="new">New</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">( 5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Cool Man Wearing
-                                                    Leather</a></h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                                <span class="old">$40.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6  mb-md-30px mb-lm-30px"
-                                    data-aos="fade-up" data-aos-delay="400">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/4.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/12.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">( 5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Portrait Of A Young
-                                                    Stylish</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-es-30px" data-aos="fade-up"
-                                    data-aos-delay="600">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/6.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/14.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 80%"></span>
-                                                </span>
-                                                <span class="rating-num">( 4 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Men's Fashion Leather
-                                                    Bag</a></h5>
-                                            <span class="price">
-                                                <span class="new">$30.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 " data-aos="fade-up"
-                                    data-aos-delay="800">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/8.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/16.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="new">Sale</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 60%"></span>
-                                                </span>
-                                                <span class="rating-num">( 3 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Long sleeve knee
-                                                    length</a></h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 mb-4 mb-md-4 mb-lg-0 mb-4">
+                        <div class="card bg-white border-variant-soft shadow-soft">
+                            <div class="blog-img position-relative">
+                                <img    src="{{ asset('frontend') }}/assets/img/blog/4.jpg" class="card-img-top rounded-top" alt="themetags office">
+                                <a href="#" class="position-absolute category-text small badge badge-secondary">SEO, Analytics</a>
                             </div>
-                        </div>
-                        <!-- 1st tab end -->
-                        <!-- 2nd tab start -->
-                        <div class="tab-pane fade" id="tab-product--new">
-                            <div class="row">
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="200">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/1.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/2.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="new">New</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">( 5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Women's Elizabeth Coat
-                                                </a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="400">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/3.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/4.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="sale">-10%</span>
-                                                <span class="new">New</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 80%"></span>
-                                                </span>
-                                                <span class="rating-num">( 4 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Ardene Microfiber
-                                                    Tights</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                                <span class="old">$48.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="600">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/5.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/6.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="sale">-7%</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 90%"></span>
-                                                </span>
-                                                <span class="rating-num">( 4.5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Women's Long Sleeve
-                                                    Shirts</a></h5>
-                                            <span class="price">
-                                                <span class="new">$30.50</span>
-                                                <span class="old">$38.00</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="800">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/7.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/8.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="new">Sale</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 70%"></span>
-                                                </span>
-                                                <span class="rating-num">( 3.5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Parrera Sunglasses -
-                                                    Lomashop</a></h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-md-30px mb-lm-30px"
-                                    data-aos="fade-up" data-aos-delay="200">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/2.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/10.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="sale">-5%</span>
-                                                <span class="new">New</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">( 5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Cool Man Wearing
-                                                    Leather</a></h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                                <span class="old">$40.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6  mb-md-30px mb-lm-30px"
-                                    data-aos="fade-up" data-aos-delay="400">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/4.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/12.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">( 5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Portrait Of A Young
-                                                    Stylish</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-es-30px" data-aos="fade-up"
-                                    data-aos-delay="600">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/6.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/14.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 80%"></span>
-                                                </span>
-                                                <span class="rating-num">( 4 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Men's Fashion Leather
-                                                    Bag</a></h5>
-                                            <span class="price">
-                                                <span class="new">$30.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 " data-aos="fade-up"
-                                    data-aos-delay="800">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/8.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/16.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="new">Sale</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 60%"></span>
-                                                </span>
-                                                <span class="rating-num">( 3 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Long sleeve knee
-                                                    length</a></h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 2nd tab end -->
-                        <!-- 3rd tab start -->
-                        <div class="tab-pane fade" id="tab-product-men">
-                            <div class="row">
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="200">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/1.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/2.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="new">New</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">( 5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Women's Elizabeth Coat
-                                                </a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="400">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/3.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/4.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="sale">-10%</span>
-                                                <span class="new">New</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 80%"></span>
-                                                </span>
-                                                <span class="rating-num">( 4 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Ardene Microfiber
-                                                    Tights</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                                <span class="old">$48.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="600">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/5.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/6.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="sale">-7%</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 90%"></span>
-                                                </span>
-                                                <span class="rating-num">( 4.5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Women's Long Sleeve
-                                                    Shirts</a></h5>
-                                            <span class="price">
-                                                <span class="new">$30.50</span>
-                                                <span class="old">$38.00</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="800">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/7.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/8.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="new">Sale</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 70%"></span>
-                                                </span>
-                                                <span class="rating-num">( 3.5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Parrera Sunglasses -
-                                                    Lomashop</a></h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-md-30px mb-lm-30px"
-                                    data-aos="fade-up" data-aos-delay="200">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/2.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/10.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="sale">-5%</span>
-                                                <span class="new">New</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">( 5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Cool Man Wearing
-                                                    Leather</a></h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                                <span class="old">$40.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6  mb-md-30px mb-lm-30px"
-                                    data-aos="fade-up" data-aos-delay="400">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/4.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/12.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">( 5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Portrait Of A Young
-                                                    Stylish</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-es-30px" data-aos="fade-up"
-                                    data-aos-delay="600">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/6.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/14.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 80%"></span>
-                                                </span>
-                                                <span class="rating-num">( 4 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Men's Fashion Leather
-                                                    Bag</a></h5>
-                                            <span class="price">
-                                                <span class="new">$30.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 " data-aos="fade-up"
-                                    data-aos-delay="800">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/8.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/16.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="new">Sale</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 60%"></span>
-                                                </span>
-                                                <span class="rating-num">( 3 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Long sleeve knee
-                                                    length</a></h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 3rd tab end -->
-                        <!-- 4th tab start -->
-                        <div class="tab-pane fade" id="tab-product-women">
-                            <div class="row">
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="200">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/1.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/2.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="new">New</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">( 5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Women's Elizabeth Coat
-                                                </a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="400">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/3.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/4.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="sale">-10%</span>
-                                                <span class="new">New</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 80%"></span>
-                                                </span>
-                                                <span class="rating-num">( 4 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Ardene Microfiber
-                                                    Tights</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                                <span class="old">$48.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="600">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/5.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/6.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="sale">-7%</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 90%"></span>
-                                                </span>
-                                                <span class="rating-num">( 4.5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Women's Long Sleeve
-                                                    Shirts</a></h5>
-                                            <span class="price">
-                                                <span class="new">$30.50</span>
-                                                <span class="old">$38.00</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="800">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/7.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/8.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="new">Sale</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 70%"></span>
-                                                </span>
-                                                <span class="rating-num">( 3.5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Parrera Sunglasses -
-                                                    Lomashop</a></h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-md-30px mb-lm-30px"
-                                    data-aos="fade-up" data-aos-delay="200">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/2.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/10.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="sale">-5%</span>
-                                                <span class="new">New</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">( 5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Cool Man Wearing
-                                                    Leather</a></h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                                <span class="old">$40.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6  mb-md-30px mb-lm-30px"
-                                    data-aos="fade-up" data-aos-delay="400">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/4.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/12.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">( 5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Portrait Of A Young
-                                                    Stylish</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-es-30px" data-aos="fade-up"
-                                    data-aos-delay="600">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/6.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/14.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 80%"></span>
-                                                </span>
-                                                <span class="rating-num">( 4 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Men's Fashion Leather
-                                                    Bag</a></h5>
-                                            <span class="price">
-                                                <span class="new">$30.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 " data-aos="fade-up"
-                                    data-aos-delay="800">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/8.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/16.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="new">Sale</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 60%"></span>
-                                                </span>
-                                                <span class="rating-num">( 3 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Long sleeve knee
-                                                    length</a></h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 4th tab end -->
-                        <!-- 5th tab start -->
-                        <div class="tab-pane fade" id="tab-product-kids">
-                            <div class="row">
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="200">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/1.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/2.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="new">New</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">( 5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Women's Elizabeth Coat
-                                                </a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="400">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/3.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/4.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="sale">-10%</span>
-                                                <span class="new">New</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 80%"></span>
-                                                </span>
-                                                <span class="rating-num">( 4 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Ardene Microfiber
-                                                    Tights</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                                <span class="old">$48.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="600">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/5.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/6.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="sale">-7%</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 90%"></span>
-                                                </span>
-                                                <span class="rating-num">( 4.5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Women's Long Sleeve
-                                                    Shirts</a></h5>
-                                            <span class="price">
-                                                <span class="new">$30.50</span>
-                                                <span class="old">$38.00</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
-                                    data-aos-delay="800">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/7.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/8.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="new">Sale</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 70%"></span>
-                                                </span>
-                                                <span class="rating-num">( 3.5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Parrera Sunglasses -
-                                                    Lomashop</a></h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-md-30px mb-lm-30px"
-                                    data-aos="fade-up" data-aos-delay="200">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/2.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/10.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="sale">-5%</span>
-                                                <span class="new">New</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">( 5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Cool Man Wearing
-                                                    Leather</a></h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                                <span class="old">$40.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6  mb-md-30px mb-lm-30px"
-                                    data-aos="fade-up" data-aos-delay="400">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/4.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/12.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">( 5 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Portrait Of A Young
-                                                    Stylish</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-es-30px" data-aos="fade-up"
-                                    data-aos-delay="600">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/6.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/14.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 80%"></span>
-                                                </span>
-                                                <span class="rating-num">( 4 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Men's Fashion Leather
-                                                    Bag</a></h5>
-                                            <span class="price">
-                                                <span class="new">$30.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 " data-aos="fade-up"
-                                    data-aos-delay="800">
-                                    <!-- Single Prodect -->
-                                    <div class="product">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img src="{{ asset('frontend') }}/assets/images/product-image/8.jpg" alt="Product" />
-                                                <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/16.jpg"
-                                                    alt="Product" />
-                                            </a>
-                                            <span class="badges">
-                                                <span class="new">Sale</span>
-                                            </span>
-                                            <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="pe-7s-like"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="pe-7s-refresh-2"></i></a>
-                                            </div>
-                                            <button title="Add To Cart" class=" add-to-cart">Add
-                                                To Cart</button>
-                                        </div>
-                                        <div class="content">
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 60%"></span>
-                                                </span>
-                                                <span class="rating-num">( 3 Review )</span>
-                                            </span>
-                                            <h5 class="title"><a href="single-product.html">Long sleeve knee
-                                                    length</a></h5>
-                                            <span class="price">
-                                                <span class="new">$38.50</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Prodect -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 5th tab end -->
-                    </div>
-                    <a href="shop-left-sidebar.html" class="btn btn-lg btn-primary btn-hover-dark m-auto"> Load More <i
-                            class="fa fa-arrow-right ml-15px" aria-hidden="true"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Product Area End -->
-
-    <!-- Banner Area Start -->
-    <div class="banner-area pt-100px pb-100px plr-15px">
-        <div class="row m-0">
-            @foreach ($categories as $category)
-               <div class="col-12 col-lg-4 mb-2 mb-md-30px mb-lm-30px">
-                <div class="single-banner-2">
-                    <img src="{{ asset('uploads/category_photos/'. $category->category_photo) }}" alt="">
-                    <div class="item-disc">
-                        <h4 class="title"> {{ $category->category_tagline }} <br>
-                           {{ $category->category_name }}</h4>
-                        <a href="shop-left-sidebar.html" class="shop-link btn btn-primary ">Shop Now <i
-                                class="fa fa-shopping-basket ml-5px" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-    <!-- Banner Area End -->
-
-    <!-- Product Area Start -->
-    <div class="product-area pt-100px pb-100px">
-        <div class="container">
-            <!-- Section Title & Tab Start -->
-            <div class="row">
-                <!-- Section Title Start -->
-                <div class="col-lg col-md col-12">
-                    <div class="section-title mb-0">
-                        <h2 class="title">#newarrivals</h2>
-                    </div>
-                </div>
-                <!-- Section Title End -->
-
-                <!-- Tab Start -->
-                <div class="col-lg-auto col-md-auto col-12">
-                    <ul class="product-tab-nav nav">
-                        <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab"
-                                href="#tab-product-all">All</a></li>
-                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-product-new">New</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-                                href="#tab-product-bestsellers">Bestsellers</a></li>
-                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-                                href="#tab-product-itemssale">Items
-                                Sale</a></li>
-                    </ul>
-                </div>
-                <!-- Tab End -->
-            </div>
-            <!-- Section Title & Tab End -->
-
-            <div class="row">
-                <div class="col">
-                    <div class="tab-content top-borber">
-                        <!-- 1st tab start -->
-                        <div class="tab-pane fade show active" id="tab-product-all">
-                            <div class="new-product-slider swiper-container slider-nav-style-1 small-nav">
-                                <div class="new-product-wrapper swiper-wrapper">
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/8.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/6.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 100%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Women's Elizabeth
-                                                        Coat
-                                                    </a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/9.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/5.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="sale">-10%</span>
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 80%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 4 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Ardene Microfiber
-                                                        Tights</a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                    <span class="old">$48.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/10.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/2.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="sale">-7%</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 90%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 4.5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Women's Long
-                                                        Sleeve
-                                                        Shirts</a></h5>
-                                                <span class="price">
-                                                    <span class="new">$30.50</span>
-                                                    <span class="old">$38.00</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/11.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/11.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="new">Sale</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 70%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 3.5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Parrera
-                                                        Sunglasses -
-                                                        Lomashop</a></h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/3.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/4.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="sale">-10%</span>
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 80%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 4 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Ardene Microfiber
-                                                        Tights</a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                    <span class="old">$48.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/1.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/2.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 100%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Women's Elizabeth
-                                                        Coat
-                                                    </a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                </div>
-                                <!-- Add Arrows -->
-                                <div class="swiper-buttons">
-                                    <div class="swiper-button-next"></div>
-                                    <div class="swiper-button-prev"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 1st tab end -->
-                        <!-- 2nd tab start -->
-                        <div class="tab-pane fade" id="tab-product-new">
-                            <div class="new-product-slider swiper-container slider-nav-style-1 small-nav">
-                                <div class="new-product-wrapper swiper-wrapper">
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/8.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/6.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 100%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Women's Elizabeth
-                                                        Coat
-                                                    </a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/9.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/5.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="sale">-10%</span>
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 80%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 4 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Ardene Microfiber
-                                                        Tights</a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                    <span class="old">$48.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/10.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/2.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="sale">-7%</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 90%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 4.5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Women's Long
-                                                        Sleeve
-                                                        Shirts</a></h5>
-                                                <span class="price">
-                                                    <span class="new">$30.50</span>
-                                                    <span class="old">$38.00</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/11.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/11.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="new">Sale</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 70%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 3.5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Parrera
-                                                        Sunglasses -
-                                                        Lomashop</a></h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/3.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/4.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="sale">-10%</span>
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 80%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 4 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Ardene Microfiber
-                                                        Tights</a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                    <span class="old">$48.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/1.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/2.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 100%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Women's Elizabeth
-                                                        Coat
-                                                    </a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                </div>
-                                <!-- Add Arrows -->
-                                <div class="swiper-buttons">
-                                    <div class="swiper-button-next"></div>
-                                    <div class="swiper-button-prev"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 2nd tab end -->
-                        <!-- 3rd tab start -->
-                        <div class="tab-pane fade" id="tab-product-bestsellers">
-                            <div class="new-product-slider swiper-container slider-nav-style-1 small-nav">
-                                <div class="new-product-wrapper swiper-wrapper">
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/8.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/6.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 100%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Women's Elizabeth
-                                                        Coat
-                                                    </a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/9.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/5.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="sale">-10%</span>
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 80%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 4 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Ardene Microfiber
-                                                        Tights</a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                    <span class="old">$48.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/10.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/2.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="sale">-7%</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 90%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 4.5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Women's Long
-                                                        Sleeve
-                                                        Shirts</a></h5>
-                                                <span class="price">
-                                                    <span class="new">$30.50</span>
-                                                    <span class="old">$38.00</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/11.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/11.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="new">Sale</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 70%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 3.5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Parrera
-                                                        Sunglasses -
-                                                        Lomashop</a></h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/3.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/4.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="sale">-10%</span>
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 80%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 4 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Ardene Microfiber
-                                                        Tights</a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                    <span class="old">$48.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/1.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/2.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 100%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Women's Elizabeth
-                                                        Coat
-                                                    </a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                </div>
-                                <!-- Add Arrows -->
-                                <div class="swiper-buttons">
-                                    <div class="swiper-button-next"></div>
-                                    <div class="swiper-button-prev"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 3rd tab end -->
-                        <!-- 4th tab start -->
-                        <div class="tab-pane fade" id="tab-product-itemssale">
-                            <div class="new-product-slider swiper-container slider-nav-style-1 small-nav">
-                                <div class="new-product-wrapper swiper-wrapper">
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/8.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/6.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 100%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Women's Elizabeth
-                                                        Coat
-                                                    </a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/9.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/5.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="sale">-10%</span>
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 80%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 4 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Ardene Microfiber
-                                                        Tights</a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                    <span class="old">$48.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/10.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/2.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="sale">-7%</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 90%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 4.5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Women's Long
-                                                        Sleeve
-                                                        Shirts</a></h5>
-                                                <span class="price">
-                                                    <span class="new">$30.50</span>
-                                                    <span class="old">$38.00</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/11.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/11.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="new">Sale</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 70%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 3.5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Parrera
-                                                        Sunglasses -
-                                                        Lomashop</a></h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/3.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/4.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="sale">-10%</span>
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 80%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 4 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Ardene Microfiber
-                                                        Tights</a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                    <span class="old">$48.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                    <div class="new-product-item swiper-slide">
-                                        <!-- Single Prodect -->
-                                        <div class="product">
-                                            <div class="thumb">
-                                                <a href="single-product.html" class="image">
-                                                    <img src="{{ asset('frontend') }}/assets/images/product-image/1.jpg" alt="Product" />
-                                                    <img class="hover-image" src="{{ asset('frontend') }}/assets/images/product-image/2.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="badges">
-                                                    <span class="new">New</span>
-                                                </span>
-                                                <div class="actions">
-                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                            class="pe-7s-like"></i></a>
-                                                    <a href="#" class="action quickview" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                                            class="pe-7s-refresh-2"></i></a>
-                                                </div>
-                                                <button title="Add To Cart" class=" add-to-cart">Add
-                                                    To Cart</button>
-                                            </div>
-                                            <div class="content">
-                                                <span class="ratings">
-                                                    <span class="rating-wrap">
-                                                        <span class="star" style="width: 100%"></span>
-                                                    </span>
-                                                    <span class="rating-num">( 5 Review )</span>
-                                                </span>
-                                                <h5 class="title"><a href="single-product.html">Women's Elizabeth
-                                                        Coat
-                                                    </a>
-                                                </h5>
-                                                <span class="price">
-                                                    <span class="new">$38.50</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Prodect -->
-                                    </div>
-                                </div>
-                                <!-- Add Arrows -->
-                                <div class="swiper-buttons">
-                                    <div class="swiper-button-next"></div>
-                                    <div class="swiper-button-prev"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 4th tab end -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Product Area End -->
-
-    <!-- Deal Area Start -->
-    <div class="deal-area deal-bg deal-bg-2" data-bg-image="assets/images/deal-img/deal-bg-2.jpg">
-        <div class="container ">
-            <div class="row">
-                <div class="col-12">
-                    <div class="deal-inner position-relative pt-100px pb-100px">
-                        <div class="deal-wrapper">
-                            <span class="category">#FASHION SHOP</span>
-                            <h3 class="title">Deal Of The Day</h3>
-                            <div class="deal-timing">
-                                <div data-countdown="2023/12/31"></div>
-                            </div>
-                            <a href="shop-left-sidebar.html" class="btn btn-lg btn-primary btn-hover-dark m-auto"> Shop
-                                Now <i class="fa fa-shopping-basket ml-15px" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="deal-image">
-                            <img class="img-fluid" src="{{ asset('frontend') }}/assets/images/deal-img/woman.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Deal Area End -->
-    <!--  Blog area Start -->
-    <div class="main-blog-area pb-100px pt-100px">
-        <div class="container">
-            <!-- section title start -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-title text-center mb-30px0px">
-                        <h2 class="title">#blog</h2>
-                        <p class="sub-title">Lorem ipsum dolor sit amet consectetur adipisicing eiusmod.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- section title start -->
-
-            <div class="row">
-                <div class="col-lg-4 mb-md-30px mb-lm-30px">
-                    <div class="single-blog">
-                        <div class="blog-image">
-                            <a href="blog-single-left-sidebar.html"><img src="{{ asset('frontend') }}/assets/images/blog-image/1.jpg"
-                                    class="img-responsive w-100" alt=""></a>
-                        </div>
-                        <div class="blog-text">
-                            <div class="blog-athor-date">
-                                <a class="blog-date height-shape" href="#"><i class="fa fa-calendar"
-                                        aria-hidden="true"></i> 24 Aug, 2021</a>
-                                <a class="blog-mosion" href="#"><i class="fa fa-commenting" aria-hidden="true"></i> 1.5
-                                    K</a>
-                            </div>
-                            <h5 class="blog-heading"><a class="blog-heading-link"
-                                    href="blog-single-left-sidebar.html">There are many variations of
-                                    passages of Lorem</a></h5>
-
-                            <a href="blog-single-left-sidebar.html" class="btn btn-primary blog-btn"> Read More<i
-                                    class="fa fa-arrow-right ml-5px" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single blog -->
-                <div class="col-lg-4 mb-md-30px mb-lm-30px">
-                    <div class="single-blog ">
-                        <div class="blog-image">
-                            <a href="blog-single-left-sidebar.html"><img src="{{ asset('frontend') }}/assets/images/blog-image/2.jpg"
-                                    class="img-responsive w-100" alt=""></a>
-                        </div>
-                        <div class="blog-text">
-                            <div class="blog-athor-date">
-                                <a class="blog-date height-shape" href="#"><i class="fa fa-calendar"
-                                        aria-hidden="true"></i> 24 Aug, 2021</a>
-                                <a class="blog-mosion" href="#"><i class="fa fa-commenting" aria-hidden="true"></i> 1.5
-                                    K</a>
-                            </div>
-                            <h5 class="blog-heading"><a class="blog-heading-link"
-                                    href="blog-single-left-sidebar.html">It is a long established factoi
-                                    ader will be distracted</a></h5>
-
-                            <a href="blog-single-left-sidebar.html" class="btn btn-primary blog-btn"> Read More<i
-                                    class="fa fa-arrow-right ml-5px" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single blog -->
-                <div class="col-lg-4">
-                    <div class="single-blog">
-                        <div class="blog-image">
-                            <a href="blog-single-left-sidebar.html"><img src="{{ asset('frontend') }}/assets/images/blog-image/3.jpg"
-                                    class="img-responsive w-100" alt=""></a>
-                        </div>
-                        <div class="blog-text">
-                            <div class="blog-athor-date">
-                                <a class="blog-date height-shape" href="#"><i class="fa fa-calendar"
-                                        aria-hidden="true"></i> 24 Aug, 2021</a>
-                                <a class="blog-mosion" href="#"><i class="fa fa-commenting" aria-hidden="true"></i> 1.5
-                                    K</a>
-                            </div>
-                            <h5 class="blog-heading"><a class="blog-heading-link"
-                                    href="blog-single-left-sidebar.html">Contrary to popular belieflo
-                                    lorem Ipsum is not</a></h5>
-
-
-                            <a href="blog-single-left-sidebar.html" class="btn btn-primary blog-btn"> Read More<i
-                                    class="fa fa-arrow-right ml-5px" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single blog -->
-            </div>
-        </div>
-    </div>
-    <!--  Blog area End -->
-
-    <!-- Footer Area Start -->
-    <div class="footer-area m-lrb-30px">
-        <div class="footer-container">
-            <div class="footer-top">
-                <div class="container">
-                    <div class="row">
-                        <!-- Start single blog -->
-                        <div class="col-md-6 col-lg-3 mb-md-30px mb-lm-30px">
-                            <div class="single-wedge">
-                                <div class="footer-logo">
-                                    <a href="index.html"><img src="{{ asset('frontend') }}/assets/images/logo/logo-white.png" alt=""></a>
-                                </div>
-                                <p class="about-text">Lorem ipsum dolor sit amet consectet adipisicing elit, sed do
-                                    eiusmod templ incididunt ut labore et dolore magnaol aliqua Ut enim ad minim.
-                                </p>
-                                <ul class="link-follow">
-                                    <li>
-                                        <a class="m-0" title="Twitter" href="#"><i class="fa fa-twitter"
-                                                aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a title="Tumblr" href="#"><i class="fa fa-tumblr" aria-hidden="true"></i>
+                            <div class="card-body">
+                                <div class="media d-flex align-items-center justify-content-between">
+                                    <div class="post-group">
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="23k followers">
+                                            <img class="avatar avatar-xs mr-2 img-fluid rounded-circle border border-variant-primary p-1"    src="{{ asset('frontend') }}/assets/img/clients/client-1.jpg" alt="admin"> <span class="small">Admin</span>
                                         </a>
-                                    </li>
-                                    <li>
-                                        <a title="Facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="small"><span class="far fa-calendar-alt mr-2"></span>15 March 2020</span>
+                                    </div>
+                                </div>
+                                <h3 class="h5 card-title mt-3"><a href="#">Holisticly promote enabled</a></h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="services-details.html" class="link-with-icon text-default font-small font-weight-bold" target="_blank">Read more <span> <i class="fas fa-angle-right"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4 mb-md-4 mb-lg-0 mb-4">
+                        <div class="card bg-white border-variant-soft shadow-soft">
+                            <div class="blog-img position-relative">
+                                <img    src="{{ asset('frontend') }}/assets/img/blog/2.jpg" class="card-img-top rounded-top" alt="themetags office">
+                                <a href="#" class="position-absolute category-text small badge badge-secondary">Marketing</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="media d-flex align-items-center justify-content-between">
+                                    <div class="post-group">
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="23k followers">
+                                            <img class="avatar avatar-xs mr-2 img-fluid rounded-circle border border-variant-primary p-1"    src="{{ asset('frontend') }}/assets/img/clients/client-2.jpg" alt="admin"> <span class="small">Writer</span>
                                         </a>
-                                    </li>
-                                    <li>
-                                        <a title="Instagram" href="#"><i class="fa fa-instagram" aria-hidden="true"></i>
-                                            </i>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="small"><span class="far fa-calendar-alt mr-2"></span>15 March 2020</span>
+                                    </div>
+                                </div>
+                                <h3 class="h5 card-title mt-3"><a href="#">Authoritatively unleash fully</a></h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="services-details.html" class="link-with-icon text-default font-small font-weight-bold" target="_blank">Read more <span> <i class="fas fa-angle-right"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4 mb-md-4 mb-lg-0 mb-4">
+                        <div class="card bg-white border-variant-soft shadow-soft">
+                            <div class="blog-img position-relative">
+                                <img    src="{{ asset('frontend') }}/assets/img/blog/1.jpg" class="card-img-top rounded-top" alt="themetags office">
+                                <a href="#" class="position-absolute category-text small badge badge-secondary">Business</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="media d-flex align-items-center justify-content-between">
+                                    <div class="post-group">
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="23k followers">
+                                            <img class="avatar avatar-xs mr-2 img-fluid rounded-circle border border-variant-primary p-1"    src="{{ asset('frontend') }}/assets/img/clients/client-5.jpg" alt="admin"> <span class="small">Joe B</span>
                                         </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- End single blog -->
-                        <!-- Start single blog -->
-                        <div class="col-md-3 col-sm-6 col-lg-2 mb-md-30px mb-lm-30px pl-lg-50px">
-                            <div class="single-wedge">
-                                <h4 class="footer-herading">Quick Links</h4>
-                                <div class="footer-links">
-                                    <div class="footer-row">
-                                        <ul class="align-items-center">
-                                            <li class="li"><a class="single-link" href="#">Support
-                                                </a></li>
-                                            <li class="li"><a class="single-link" href="#">Helpline</a></li>
-                                            <li class="li"><a class="single-link" href="#">Courses</a></li>
-                                            <li class="li"><a class="single-link" href="about.html">About</a></li>
-                                            <li class="li"><a class="single-link" href="#">Event</a></li>
-                                        </ul>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="small"><span class="far fa-calendar-alt mr-2"></span>15 March 2020</span>
                                     </div>
                                 </div>
+                                <h3 class="h5 card-title mt-3"><a href="#">We partnered up with Google</a></h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="services-details.html" class="link-with-icon text-default font-small font-weight-bold" target="_blank">Read more <span> <i class="fas fa-angle-right"></i></span></a>
                             </div>
-                        </div>
-                        <!-- End single blog -->
-                        <!-- Start single blog -->
-                        <div class="col-md-3 col-lg-2 col-sm-6 mb-lm-30px pl-lg-50px">
-                            <div class="single-wedge">
-                                <h4 class="footer-herading">Other Page</h4>
-                                <div class="footer-links">
-                                    <div class="footer-row">
-                                        <ul class="align-items-center">
-                                            <li class="li"><a class="single-link" href="about.html"> About </a>
-                                            </li>
-                                            <li class="li"><a class="single-link" href="blog-grid.html">Blog</a></li>
-                                            <li class="li"><a class="single-link" href="#">Speakers</a></li>
-                                            <li class="li"><a class="single-link" href="contact.html">Contact</a></li>
-                                            <li class="li"><a class="single-link" href="#">Tricket</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End single blog -->
-                        <!-- Start single blog -->
-                        <div class="col-md-3 col-lg-2 col-sm-6 mb-lm-30px pl-lg-50px">
-                            <div class="single-wedge">
-                                <h4 class="footer-herading">Company</h4>
-                                <div class="footer-links">
-                                    <div class="footer-row">
-                                        <ul class="align-items-center">
-                                            <li class="li"><a class="single-link" href="index.html">Jesco</a>
-                                            </li>
-                                            <li class="li"><a class="single-link" href="shop-left-sidebar.html">Shop</a>
-                                            </li>
-                                            <li class="li"><a class="single-link" href="contact.html">Contact us</a>
-                                            </li>
-                                            <li class="li"><a class="single-link" href="login.html">Log in</a></li>
-                                            <li class="li"><a class="single-link" href="#">Help</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End single blog -->
-                        <!-- Start single blog -->
-                        <div class="col-md-4 col-lg-3 col-sm-6">
-                            <div class="single-wedge">
-
-                                <h4 class="footer-herading">Store Information.</h4>
-                                <div class="footer-links">
-                                    <!-- News letter area -->
-                                    <p class="address">2005 Your Address Goes Here. <br>
-                                        896, Address 10010, HGJ</p>
-                                    <p class="phone">Phone/Fax:<a href="tel:0123456789">0123456789</a></p>
-                                    <p class="mail">Email:<a href="mailto:demo@example.com">demo@example.com</a></p>
-                                    <img src="{{ asset('frontend') }}/assets/images/icons/payment.png" alt="" class="payment-img img-fulid">
-
-                                    <!-- News letter area  End -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End single blog -->
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            <p class="copy-text"> © 2023 <strong>Jesco</strong> Made With <i class="fa fa-heart"
-                                    aria-hidden="true"></i> By <a class="company-name" href="https://hasthemes.com/">
-                                    <strong> HasThemes</strong></a>.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Footer Area End -->
+        </section>
+        <!--blog section end-->
 
-    <!-- Search Modal Start -->
-    <div class="modal popup-search-style" id="searchActive">
-        <button type="button" class="close-btn" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-        <div class="modal-overlay">
-            <div class="modal-dialog p-0" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <h2>Search Your Product</h2>
-                        <form class="navbar-form position-relative" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search here...">
-                            </div>
-                            <button type="submit" class="submit-btn"><i class="pe-7s-search"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Search Modal End -->
-
-    <!-- Login Modal Start -->
-    <div class="modal popup-login-style" id="loginActive">
-        <button type="button" class="close-btn" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-        <div class="modal-overlay">
-            <div class="modal-dialog p-0" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="login-content">
-                            <h2>Log in</h2>
-                            <h3>Log in your account</h3>
-                            <form action="#">
-                                <input type="text" placeholder="Username">
-                                <input type="password" placeholder="Password">
-                                <div class="remember-forget-wrap">
-                                    <div class="remember-wrap">
-                                        <input type="checkbox">
-                                        <p>Remember</p>
-                                        <span class="checkmark"></span>
-                                    </div>
-                                    <div class="forget-wrap">
-                                        <a href="#">Forgot your password?</a>
-                                    </div>
-                                </div>
-                                <button type="button">Log in</button>
-                                <div class="member-register">
-                                    <p> Not a member? <a href="login.html"> Register now</a></p>
-                                </div>
-                            </form>
+        <!--team section start-->
+        <section class="section section-lg ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-heading text-center mb-5">
+                            <h2>Our Team</h2>
+                            <p class="lead">Dynamically pursue reliable convergence rather than 24/7 process improvements
+                                develop end-to-end customer service.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!-- Login Modal End -->
-    <!-- Modal -->
-    <div class="modal modal-2 fade" id="exampleModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-6 col-sm-12 col-xs-12 mb-lm-30px mb-md-30px mb-sm-30px">
-                            <!-- Swiper -->
-                            <div class="swiper-container zoom-top">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto"
-                                            src="{{ asset('frontend') }}/assets/images/product-image/zoom-image/1.jpg" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto"
-                                            src="{{ asset('frontend') }}/assets/images/product-image/zoom-image/2.jpg" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto"
-                                            src="{{ asset('frontend') }}/assets/images/product-image/zoom-image/3.jpg" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto"
-                                            src="{{ asset('frontend') }}/assets/images/product-image/zoom-image/4.jpg" alt="">
-                                    </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 mb-md-4 mb-lg-0 mb-4">
+                        <div class="profile-card">
+                            <div class="card bg-soft  shadow-sm animate-hover border-variant-soft">
+                                <div class="profile-image-small  bg-white  shadow-inset shadow border border-light rounded-circle p-1 mt-5 mb-4">
+                                    <img    src="{{ asset('frontend') }}/assets/img/team/team-6.jpg" class="card-img-top rounded-circle" alt="Christopher Avatar">
                                 </div>
-                            </div>
-                            <div class="swiper-container zoom-thumbs mt-3 mb-3">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto"
-                                            src="{{ asset('frontend') }}/assets/images/product-image/small-image/1.jpg" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto"
-                                            src="{{ asset('frontend') }}/assets/images/product-image/small-image/2.jpg" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto"
-                                            src="{{ asset('frontend') }}/assets/images/product-image/small-image/3.jpg" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto"
-                                            src="{{ asset('frontend') }}/assets/images/product-image/small-image/4.jpg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="200">
-                            <div class="product-details-content quickview-content">
-                                <h2>Ardene Microfiber Tights</h2>
-                                <div class="pricing-meta">
-                                    <ul>
-                                        <li class="old-price not-cut">$18.90</li>
-                                    </ul>
-                                </div>
-                                <div class="pro-details-rating-wrap">
-                                    <div class="rating-product">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <span class="read-review"><a class="reviews" href="#">( 5 Customer Review
-                                            )</a></span>
-                                </div>
-                                <p class="mt-30px mb-0">Lorem ipsum dolor sit amet, consect adipisicing elit, sed do
-                                    eiusmod tempor incidi ut labore
-                                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercita ullamco
-                                    laboris nisi
-                                    ut aliquip ex ea commodo </p>
-                                <div class="pro-details-quality">
-                                    <div class="cart-plus-minus">
-                                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1" />
-                                    </div>
-                                    <div class="pro-details-cart">
-                                        <button class="add-cart" href="#"> Add To
-                                            Cart</button>
-                                    </div>
-                                    <div class="pro-details-compare-wishlist pro-details-wishlist ">
-                                        <a href="wishlist.html"><i class="pe-7s-like"></i></a>
-                                    </div>
-                                    <div class="pro-details-compare-wishlist pro-details-compare">
-                                        <a href="compare.html"><i class="pe-7s-refresh-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-details-sku-info pro-details-same-style  d-flex">
-                                    <span>SKU: </span>
-                                    <ul class="d-flex">
+                                <div class="card-body text-center px-5 pb-5 pt-0">
+                                    <h3 class="h5 mb-2">John Q. Public</h3>
+                                    <span class="h6 font-weight-normal text-gray mb-3">Developer</span>
+                                    <ul class="list-unstyled d-flex my-3 justify-content-center">
                                         <li>
-                                            <a href="#">Ch-256xl</a>
+                                            <a href="#" target="_blank" aria-label="facebook social link" class="icon icon-xs icon-facebook mr-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="50k Like">
+                                                <span class="fab fa-facebook-f"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="40k Followers">
+                                                <span class="fab fa-twitter"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank" aria-label="slack social link" class="icon icon-xs icon-slack mr-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="25k Subscribe">
+                                                <span class="fab fa-youtube"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank" aria-label="dribbble social link" class="icon icon-xs icon-dribbble mr-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="2k Project">
+                                                <span class="fab fa-dribbble"></span>
+                                            </a>
                                         </li>
                                     </ul>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
-                                <div class="pro-details-categories-info pro-details-same-style d-flex">
-                                    <span>Categories: </span>
-                                    <ul class="d-flex">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-md-4 mb-lg-0 mb-4">
+                        <div class="profile-card">
+                            <div class="card bg-soft  shadow-sm animate-hover border-variant-soft">
+                                <div class="profile-image-small  bg-white  shadow-inset shadow border border-light rounded-circle p-1 mt-5 mb-4">
+                                    <img    src="{{ asset('frontend') }}/assets/img/team/team-1.jpg" class="card-img-top rounded-circle" alt="Christopher Avatar">
+                                </div>
+                                <div class="card-body text-center px-5 pb-5 pt-0">
+                                    <h3 class="h5 mb-2">Madurai Mani Iyer</h3>
+                                    <span class="h6 font-weight-normal text-gray mb-3">Developer</span>
+                                    <ul class="list-unstyled d-flex my-3 justify-content-center">
                                         <li>
-                                            <a href="#">Fashion.</a>
+                                            <a href="#" target="_blank" aria-label="facebook social link" class="icon icon-xs icon-facebook mr-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="50k Like">
+                                                <span class="fab fa-facebook-f"></span>
+                                            </a>
                                         </li>
                                         <li>
-                                            <a href="#">eCommerce</a>
+                                            <a href="#" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="40k Followers">
+                                                <span class="fab fa-twitter"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank" aria-label="slack social link" class="icon icon-xs icon-slack mr-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="25k Subscribe">
+                                                <span class="fab fa-youtube"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank" aria-label="dribbble social link" class="icon icon-xs icon-dribbble mr-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="2k Project">
+                                                <span class="fab fa-dribbble"></span>
+                                            </a>
                                         </li>
                                     </ul>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
-                                <div class="pro-details-social-info pro-details-same-style d-flex">
-                                    <span>Share: </span>
-                                    <ul class="d-flex">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-md-4 mb-lg-0 mb-4">
+                        <div class="profile-card">
+                            <div class="card bg-soft  shadow-sm animate-hover border-variant-soft">
+                                <div class="profile-image-small  bg-white  shadow-inset shadow border border-light rounded-circle p-1 mt-5 mb-4">
+                                    <img    src="{{ asset('frontend') }}/assets/img/team/team-4.jpg" class="card-img-top rounded-circle" alt="Christopher Avatar">
+                                </div>
+                                <div class="card-body text-center px-5 pb-5 pt-0">
+                                    <h3 class="h5 mb-2">Maria J. Go</h3>
+                                    <span class="h6 font-weight-normal text-gray mb-3">Developer</span>
+                                    <ul class="list-unstyled d-flex my-3 justify-content-center">
                                         <li>
-                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#" target="_blank" aria-label="facebook social link" class="icon icon-xs icon-facebook mr-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="50k Like">
+                                                <span class="fab fa-facebook-f"></span>
+                                            </a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="40k Followers">
+                                                <span class="fab fa-twitter"></span>
+                                            </a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fa fa-google"></i></a>
+                                            <a href="#" target="_blank" aria-label="slack social link" class="icon icon-xs icon-slack mr-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="25k Subscribe">
+                                                <span class="fab fa-youtube"></span>
+                                            </a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fa fa-youtube"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-instagram"></i></a>
+                                            <a href="#" target="_blank" aria-label="dribbble social link" class="icon icon-xs icon-dribbble mr-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="2k Project">
+                                                <span class="fab fa-dribbble"></span>
+                                            </a>
                                         </li>
                                     </ul>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+        <!--team section end-->
+
+        <!--testimonial section start-->
+        <section class="section section-lg bg-soft">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-9 col-lg-8">
+                        <div class="section-heading mb-5 text-center">
+                            <h2>What Clients Say About Us</h2>
+                            <p class="lead">
+                                Rapidiously morph transparent internal or "organic" sources whereas resource sucking
+                                e-business innovate compelling internal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-6 mb-4 mb-md-4 mb-lg-0">
+                        <div class="testimonial-single shadow-sm bg-white rounded-custom p-5">
+                            <div class="quotation mb-4">
+                                <span class="icon icon-md icon-lg icon-light"><i class="fas fa-quote-left"></i></span>
+                            </div>
+                            <blockquote class="blockquote">
+                                Assertively procrastinate distributed relationships whereas equity invested intellectual capital everything energistically underwhelm proactive.
+                            </blockquote>
+                            <div class="d-flex justify-content-md-between justify-content-lg-between align-items-center pt-3">
+                                <div class="media align-items-center">
+                                    <img    src="{{ asset('frontend') }}/assets/img/team/team-4.jpg" alt="team" class="avatar avatar-sm mr-3">
+                                    <div class="media-body">
+                                        <h6 class="mb-0">Kyan Boards</h6>
+                                        <small>CEO, ThemeTags</small>
+                                    </div>
+                                </div>
+                                <div class="client-ratting d-none d-md-block d-lg-block">
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item mr-0"><span class="icon icon-xs font-small text-warning"><i class="fas fa-star ratting-color"></i></span></li>
+                                        <li class="list-inline-item mr-0"><span class="icon icon-xs font-small text-warning"><i class="fas fa-star ratting-color"></i></span></li>
+                                        <li class="list-inline-item mr-0"><span class="icon icon-xs font-small text-warning"><i class="fas fa-star ratting-color"></i></span></li>
+                                        <li class="list-inline-item mr-0"><span class="icon icon-xs font-small text-warning"><i class="fas fa-star ratting-color"></i></span></li>
+                                        <li class="list-inline-item mr-0"><span class="icon icon-xs font-small text-warning"><i class="fas fa-star ratting-color"></i></span></li>
+                                    </ul>
+                                    <span class="font-weight-bold small">5.0 <span class="font-weight-lighter">Out of 5</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-4 mb-md-4 mb-lg-0">
+                        <div class="testimonial-single shadow-sm bg-white rounded-custom p-5">
+                            <div class="quotation mb-4">
+                                <span class="icon icon-md icon-lg icon-light"><i class="fas fa-quote-left"></i></span>
+                            </div>
+                            <blockquote class="blockquote">
+                                Intrinsicly facilitate functional imperatives without next-generation services. Compellingly revolutionize worldwide users enterprise best practices.
+                            </blockquote>
+                            <div class="d-flex justify-content-md-between justify-content-lg-between align-items-center pt-3">
+                                <div class="media align-items-center">
+                                    <img    src="{{ asset('frontend') }}/assets/img/team/team-1.jpg" alt="team" class="avatar avatar-sm mr-3">
+                                    <div class="media-body">
+                                        <h6 class="mb-0">Pirtle Karol</h6>
+                                        <small>Team Leader, ThemeTags</small>
+                                    </div>
+                                </div>
+                                <div class="client-ratting d-none d-md-block d-lg-block">
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item mr-0"><span class="icon icon-xs font-small text-warning"><i class="fas fa-star ratting-color"></i></span></li>
+                                        <li class="list-inline-item mr-0"><span class="icon icon-xs font-small text-warning"><i class="fas fa-star ratting-color"></i></span></li>
+                                        <li class="list-inline-item mr-0"><span class="icon icon-xs font-small text-warning"><i class="fas fa-star ratting-color"></i></span></li>
+                                        <li class="list-inline-item mr-0"><span class="icon icon-xs font-small text-warning"><i class="fas fa-star ratting-color"></i></span></li>
+                                        <li class="list-inline-item mr-0"><span class="icon icon-xs font-small text-warning"><i class="fas fa-star ratting-color"></i></span></li>
+                                    </ul>
+                                    <span class="font-weight-bold small">5.0 <span class="font-weight-lighter">Out of 5</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--testimonial section end-->
+
+        <!--cta section start-->
+        <section class="section section-sm py-5 ">
+            <div class="container">
+                <div class="row justify-content-around align-items-center">
+                    <div class="col-md-7">
+                        <div class="subscribe-content">
+                            <h3>Consulting Agency for Your Business</h3>
+                            <p class="mb-lg-0 mb-md-0">Rapidiously engage fully tested e-commerce with progressive architectures.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="action-btn text-lg-right text-sm-left">
+                            <a href="#" class="btn btn-primary">Contact With Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--cta section end-->
+
     </div>
-    <!-- Modal end -->
 
-    <!-- Vendor JS -->
-    <script src="{{ asset('frontend/assets/js/vendor/modernizr-3.11.2.min.js')}}"></script>
-    <script src="{{ asset('frontend/assets/js/vendor/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{ asset('frontend/assets/js/vendor/jquery-migrate-3.3.2.min.js')}}"></script>
-    <script src="{{ asset('frontend/assets/js/vendor/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{ asset('frontend/assets/js/plugins/swiper-bundle.min.js')}}"></script>
-    <script src="{{ asset('frontend/assets/js/plugins/jquery-ui.min.js')}}"></script>
-    <script src="{{ asset('frontend/assets/js/plugins/jquery.nice-select.min.js')}}"></script>
-    <script src="{{ asset('frontend/assets/js/plugins/countdown.js')}}"></script>
-    <script src="{{ asset('frontend/assets/js/plugins/scrollup.js')}}"></script>
-    <script src="{{ asset('frontend/assets/js/plugins/jquery.zoom.min.js')}}"></script>
-    <script src="{{ asset('frontend/assets/js/plugins/venobox.min.js')}}"></script>
-    <script src="{{ asset('frontend/assets/js/plugins/ajax-mail.js')}}"></script>
-    <script src="{{ asset('frontend/assets/js/main.js')}}"></script>
-
-</body>
-
-
-<!-- Mirrored from htmldemo.net/jesco/jesco/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Mar 2024 17:15:26 GMT -->
-</html>
+@endsection
