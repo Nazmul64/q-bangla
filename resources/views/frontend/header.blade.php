@@ -3,12 +3,11 @@
     <header class="header position-relative z-9">
         <nav class="navbar navbar-expand-lg navbar-transparent navbar-dark navbar-theme-primary fixed-top headroom">
             <div class="container position-relative">
-                <a class="navbar-brand mr-lg-3" href="index.html">
-                    @foreach ($sitelogo as $sitelogo )
-                        <img width="90px" class="navbar-brand-dark"    src="{{ asset('frontend/site_logos') }}/{{ $sitelogo->main_logo }}" alt="menuimage">
-
-                    @endforeach
+                 @foreach ($sitelogo as $sitelogo )
+                <a class="navbar-brand mr-lg-3" href="{{ route('home') }}">
+                    <img width="90px" class="navbar-brand-dark"    src="{{ asset('frontend/site_logos') }}/{{ $sitelogo->main_logo }}" alt="menuimage">
                 </a>
+                  @endforeach
                 <div class="navbar-collapse collapse" id="navbar-default-primary">
                     <div class="navbar-collapse-header">
                         <div class="row">

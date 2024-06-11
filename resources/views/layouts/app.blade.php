@@ -297,10 +297,44 @@
                                     <li><a href="{{ route('sitelogo.index') }}">List Goal </a></li>
                                 </ul>
                             </li>
+                            <li>
+                                <a href="javascript: void(0);">
+                                    <i class="fe-sidebar"></i>
+                                    <span>Business Here</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="{{ route('businesshere.create') }}">Add Business Here  </a></li>
+                                    <li><a href="{{ route('businesshere.index') }}">List Business Here </a></li>
+                                </ul>
+                            </li>
+                             <li>
+                                <a href="javascript: void(0);">
+                                    <i class="fe-sidebar"></i>
+                                    <span>OuserServices</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="{{ route('ourservices.create') }}">Add Services </a></li>
+                                    <li><a href="{{ route('ourservices.index') }}">List Services </a></li>
+                                </ul>
+                            </li>
 
                             @endif
 
-
+                              @if(Auth::user()->role==1)
+                            <li>
+                                <a href="javascript: void(0);">
+                                    <i class="fe-sidebar"></i>
+                                    <span>Team View</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="">Genealogy View </a></li>
+                                    <li><a href="">Genealogy View </a></li>
+                                </ul>
+                            </li>
+                              @endif
 
                         </ul>
 

@@ -8,8 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class sitelogo extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'main_logo',
 
-    ];
 }

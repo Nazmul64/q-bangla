@@ -8,6 +8,8 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\BusinessSoluton;
 use App\Http\Controllers\Goalobjective;
 use App\Http\Controllers\SitelogoController;
+use App\Http\Controllers\totalsolutionhere;
+use App\Http\Controllers\OurservicesController;
 // Route::get('/', function () {
 //     return view('frontend.index');
 // });
@@ -28,3 +30,5 @@ Route::get('/logo', [UserProfileController::class, 'logo'])->name('logo');
 Route::resource('category', BusinessSoluton::class);
 Route::resource('goal_category', Goalobjective::class);
 Route::resource('sitelogo', SitelogoController::class);
+Route::resource('businesshere', totalsolutionhere::class);
+Route::resource('ourservices', OurservicesController::class);

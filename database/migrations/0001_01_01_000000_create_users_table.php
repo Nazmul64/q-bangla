@@ -17,8 +17,13 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('number')->nullable();
+            $table->string('number');
             $table->string('profile_photo')->default('logo.jpg');
+            $table->string('country');
+            $table->string('user_name');
+            $table->string('sponsor_id');
+            $table->string('placement_id');
+            $table->string('position_set');
             $table->integer('role')->default(1)->comment('1=customer,2=admin');
             $table->rememberToken();
             $table->timestamps();

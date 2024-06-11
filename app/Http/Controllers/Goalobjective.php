@@ -39,7 +39,7 @@ class Goalobjective extends Controller
             $file = $request->file('goal_photo');
             $fileName = hexdec(uniqid()) . '.' . $file->getClientOriginalExtension();
             $path = "frontend/object_photos/";
-            $file->move(public_path($path), $fileName);
+            $file->move(public_path($path),$fileName);
 
             ModelsGoalobjective::insert([
                 'goal_title' => $request->goal_title,

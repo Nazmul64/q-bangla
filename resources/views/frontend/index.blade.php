@@ -51,33 +51,28 @@
         <!--about section start-->
         <section class="section section-lg  ">
             <div class="container">
-                <div class="row justify-content-between align-items-center">
+                @foreach ($totalsolution as $totalsolution )
+                     <div class="row justify-content-between align-items-center">
                     <div class="col-md-12 col-lg-6 mb-4 mb-md-4 mb-lg-0">
                         <div class="card bg-primary position-relative  shadow-lg fancy-radius p-3">
-                            <div class="dot-shape-top position-absolute">
-                                <img    src="{{ asset('frontend') }}/assets/img/color-shape.svg" alt="dot" class="img-fluid">
-                            </div>
-                            <img class="fancy-radius img-fluid"    src="{{ asset('frontend') }}/assets/img/about-us-2.jpg" alt="modern desk">
-                            <div class="dot-shape position-absolute bottom-0">
-                                <img    src="{{ asset('frontend') }}/assets/img/dot-shape.png" alt="dot">
-                            </div>
+                            <img class="fancy-radius img-fluid"    src="{{ asset('frontend/business_solution') }}/{{ $totalsolution->solution_photo}}" alt="modern desk">
                         </div>
                     </div>
                     <div class="col-md-12 col-lg-5">
                         <div class="video-promo-content">
-                            <h2>Total Solutions for Your Business Here</h2>
-                            <p class="lead">Interactively develop timely niche markets before extensive imperatives. Professionally
-                                repurpose strategies.</p>
+                            <h2>{{ $totalsolution->solution_title}}</h2>
+                            <p class="lead">{{ $totalsolution->solution_description}}</p>
                             <ul class="list-unstyled tech-feature-list">
-                                <li class="py-1"><span class="icon icon-xs mr-2 text-secondary"> <i class="ti-control-forward"></i></span><strong>Creative</strong> Websites Design</li>
-                                <li class="py-1"><span class="icon icon-xs mr-2 text-secondary"> <i class="ti-control-forward"></i></span><strong>Accounting</strong> Procedures Guidebook</li>
-                                <li class="py-1"><span class="icon icon-xs mr-2 text-secondary"> <i class="ti-control-forward"></i></span><strong>Cost</strong> Accounting Fundamentals</li>
-                                <li class="py-1"><span class="icon icon-xs mr-2 text-secondary"> <i class="ti-control-forward"></i></span><strong>SEO</strong> Optimization Services</li>
+                                <li class="py-1"><span class="icon icon-xs mr-2 text-secondary"> <i class="ti-control-forward"></i></span><strong>{{ $totalsolution->solution_one}}</strong></li>
+                                <li class="py-1"><span class="icon icon-xs mr-2 text-secondary"> <i class="ti-control-forward"></i></span><strong>{{ $totalsolution->solution_two}}</strong></li>
+                                <li class="py-1"><span class="icon icon-xs mr-2 text-secondary"> <i class="ti-control-forward"></i></span>{{ $totalsolution->solution_three}}</li>
+                                <li class="py-1"><span class="icon icon-xs mr-2 text-secondary"> <i class="ti-control-forward"></i></span>{{ $totalsolution->solution_four}}</li>
                             </ul>
                             <a href="#" class="btn btn-primary  mt-3">View Services</a>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </section>
         <!--about section end-->
@@ -85,12 +80,12 @@
         <!--services section start-->
         <section class="section services-section ptb-100 bg-soft">
             <div class="container">
-                <div class="row justify-content-center">
+                 @foreach ($ourservices as $ourservices )
+                  <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="section-heading text-center mb-5">
-                            <h2>We Provide Quality Services</h2>
-                            <p class="lead">Efficiently aggregate end-to-end core competencies without maintainable. Dynamically
-                                foster tactical solutions without enabled value.</p>
+                            <h2>{{ $ourservices->ourservice_tag }}</h2>
+                            <p class="lead">{{ $ourservices->ourservies_shortsdescription }}</p>
                         </div>
                     </div>
                 </div>
@@ -98,76 +93,16 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 mb-4 mb-md-4">
                         <div class="services-single d-flex p-5 shadow-sm bg-white rounded">
                             <div class="icon icon-lg mr-4 text-secondary">
-                                <i class="ti-announcement"></i>
+                                <img height="100px" src="{{ asset('frontend/ourservies_photos/') }}/{{ $ourservices->main_logo}}">
                             </div>
                             <div class="services-content-wrap">
-                                <h3 class="h6">Marketing Services</h3>
-                                <p>Progressively empower business "outside the box" thinking with resource-leveling
-                                    partnerships.</p>
+                                <h3 class="h6">{{ $ourservices->main_title }}</h3>
+                                <p>{{ $ourservices->main_description }}</p>
                                 <a href="services-details.html" class="link-with-icon text-default font-small font-weight-bold" target="_blank">Read more <span> <i class="fas fa-angle-right"></i></span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 mb-4 mb-md-4">
-                        <div class="services-single d-flex p-5 shadow-sm bg-white rounded">
-                            <div class="icon icon-lg mr-4 text-secondary">
-                                <i class="ti-light-bulb"></i>
-                            </div>
-                            <div class="services-content-wrap">
-                                <h3 class="h6">Web App Development</h3>
-                                <p>Quickly pontificate holistic e-commerce rather than goal web-readiness enhance inexpensive.</p>
-                                <a href="services-details.html" class="link-with-icon text-default font-small font-weight-bold" target="_blank">Read more <span> <i class="fas fa-angle-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 mb-4 mb-md-4">
-                        <div class="services-single d-flex p-5 shadow-sm bg-white rounded">
-                            <div class="icon icon-lg mr-4 text-secondary">
-                                <i class="ti-headphone-alt"></i>
-                            </div>
-                            <div class="services-content-wrap">
-                                <h3 class="h6">24/7 Call Center Service</h3>
-                                <p>Authoritatively reinvent multimedia based niches with global portals orchestrate client-centered .</p>
-                                <a href="services-details.html" class="link-with-icon text-default font-small font-weight-bold" target="_blank">Read more <span> <i class="fas fa-angle-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 mb-4 mb-md-4">
-                        <div class="services-single d-flex p-5 shadow-sm bg-white rounded">
-                            <div class="icon icon-lg mr-4 text-secondary">
-                                <i class="ti-bell"></i>
-                            </div>
-                            <div class="services-content-wrap">
-                                <h3 class="h6">Social Media Marketing</h3>
-                                <p>Assertively leverage other's standardized e-services with fully tested e-commerce synergistic. </p>
-                                <a href="services-details.html" class="link-with-icon text-default font-small font-weight-bold" target="_blank">Read more <span> <i class="fas fa-angle-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 mb-4 mb-md-4">
-                        <div class="services-single d-flex p-5 shadow-sm bg-white rounded">
-                            <div class="icon icon-lg mr-4 text-secondary">
-                                <i class="ti-briefcase"></i>
-                            </div>
-                            <div class="services-content-wrap">
-                                <h3 class="h6">Corporate Business</h3>
-                                <p>Enthusiastically scale client-centric supply chains vis-a-vis enabled benefits empower global core.</p>
-                                <a href="services-details.html" class="link-with-icon text-default font-small font-weight-bold" target="_blank">Read more <span> <i class="fas fa-angle-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 mb-4 mb-md-4">
-                        <div class="services-single d-flex p-5 shadow-sm bg-white rounded">
-                            <div class="icon icon-lg mr-4 text-secondary">
-                                <i class="ti-vector"></i>
-                            </div>
-                            <div class="services-content-wrap">
-                                <h3 class="h6">Creative Consultancy</h3>
-                                <p>Conveniently productize corporate imperatives for innovative best practices ideas ethical change.</p>
-                                <a href="services-details.html" class="link-with-icon text-default font-small font-weight-bold" target="_blank">Read more <span> <i class="fas fa-angle-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>

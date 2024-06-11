@@ -22,6 +22,12 @@ class User extends Authenticatable
         'password',
         'profile_photo',
         'number',
+        'country',
+        'user_name',
+        'sponsor_id',
+        'placement_id',
+        'position_set',
+
     ];
 
     /**
