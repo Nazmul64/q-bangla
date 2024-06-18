@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Generation;
+use App\Models\Network;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -17,4 +19,6 @@ class RegisterController extends Controller
          echo "0";
        }
   }
+
+
 }

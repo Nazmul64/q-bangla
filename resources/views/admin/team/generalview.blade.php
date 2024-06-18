@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <style>
     #wrapper {
         width: 1100px;
@@ -463,6 +464,7 @@
                                 ?>
                             </li>
                         </ul>
+
 
 
                     </div>

@@ -342,12 +342,14 @@
                              <li>
                                 <a href="javascript: void(0);">
                                     <i class="fe-sidebar"></i>
-                                    <span>Level Group</span>
+                                    <span>Transactions</span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="{{ route('generalView') }}">Genealogy View </a></li>
-                                    <li><a href="{{ route('partnerTeam') }}">partnerTeam </a></li>
+                                    <li><a href="{{ route('addfund') }}">Fund Add Details</a></a></li>
+                                    <li><a href="">Balance Transfer</a></a></li>
+                                    <li><a href="">Balance Transfer Report</a></a></li>
+                                    <li><a href="">Balance Receive Report</a></a></li>
                                 </ul>
                             </li>
                               @endif
@@ -489,7 +491,6 @@
         <script src="{{ asset('uploads/dashboard/assets/libs/echarts/echarts.min.js')}}"></script>
 
         <script src="{{ asset('uploads/dashboard/assets/js/pages/dashboard.init.js')}}"></script>
-
         <!-- App js -->
 
     </body>

@@ -12,6 +12,9 @@ use App\Http\Controllers\totalsolutionhere;
 use App\Http\Controllers\OurservicesController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AddFundcontroller;
+
+
 // Route::get('/', function () {
 //     return view('frontend.index');
 // });
@@ -31,12 +34,14 @@ Route::middleware(['auth'])->group(function () {
     Route::POST('/check/email/offer', [HomeController::class, 'checkemailoffer'])->name('checkemailoffer');
     Route::POST('/sponsor_id', [RegisterController::class, 'sponsor_id'])->name('search.sponsor_id');
 
+
     Route::get('/logo', [UserProfileController::class, 'logo'])->name('logo');
 
     Route::get('/generalView', [TeamController::class, 'generalView'])->name('generalView');
     Route::get('/partnerTeam', [TeamController::class, 'partnerTeam'])->name('partnerTeam');
     Route::get('/partnerAdd', [TeamController::class, 'partnerAdd'])->name('partnerAdd');
     Route::post('/teamRegister', [TeamController::class, 'teamRegister'])->name('teamRegister');
+    Route::get('/addfund', [AddFundcontroller::class, 'addfund'])->name('addfund');
 
     Route::resource('category', BusinessSoluton::class);
     Route::resource('goal_category', Goalobjective::class);

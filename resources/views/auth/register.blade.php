@@ -333,9 +333,7 @@
                 <div class="form-group row">
                     <div class="col-12">
                         <label for="sponsor_id"> Enter  sponsor_id<span class="text-danger">*</span></label>
-                        <input class="form-control @error('sponsor_id') is-invalid @enderror " type="text"
-                            name="sponsor_id" id="sponsor_id"
-                            placeholder="Enter your sponsor">
+                            <input class="form-control @error('sponsor_id') is-invalid @enderror" type="text"   name="sponsor_id"placeholder="Enter your Sponsor Id">
                               <span id="spon_msg"></span>
                         @error('sponsor_id')
                             <span class="text-danger">{{ $message }}</span>
