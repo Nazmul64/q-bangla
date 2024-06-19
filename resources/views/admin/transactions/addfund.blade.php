@@ -22,11 +22,11 @@
                     <tbody>
                          <tr>
                              <td  class="text-align-center justify-content-center"><img height="100px" src="dashboard/assets/images/fund_images/online.png"></td>
-                             <td class="text-align-center justify-content-center align-content-center"><a href="#">Add Fund</a></td>
+                             <td class="text-align-center justify-content-center align-content-center"><a href="{{ route('addeddeposite') }}">Add Fund</a></td>
                          </tr>
                           <tr>
                              <td  class="text-align-center justify-content-center"><img height="100px" src="dashboard/assets/images/fund_images/mobile.png"></td>
-                             <td class="text-align-center justify-content-center align-content-center"><a href="#">Add Fund</a></td>
+                             <td class="text-align-center justify-content-center align-content-center"><a href="{{ route('addedbankdeposite') }}">Add Fund</a></td>
                          </tr>
                          </tr>
                     </tbody>
@@ -47,7 +47,7 @@
                 <tr class="winner__table">
                     <td>2023-08-10</td>
                     <td>Online Banking</td>
-                    <td>Sakib1</td>s 
+                    <td>Sakib1</td>s
                     <td>Pending</td>
                     <td>1,000.00 BDT</td>
                 </tr>

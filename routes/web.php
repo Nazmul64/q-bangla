@@ -13,6 +13,7 @@ use App\Http\Controllers\OurservicesController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AddFundcontroller;
+use App\Http\Controllers\Dashboardcontroller;
 
 
 // Route::get('/', function () {
@@ -41,7 +42,17 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/partnerTeam', [TeamController::class, 'partnerTeam'])->name('partnerTeam');
     Route::get('/partnerAdd', [TeamController::class, 'partnerAdd'])->name('partnerAdd');
     Route::post('/teamRegister', [TeamController::class, 'teamRegister'])->name('teamRegister');
+    Route::get('/sponsorlist', [TeamController::class, 'sponsorlist'])->name('sponsorlist');
+    Route::post('/sponsorlavel', [TeamController::class, 'sponsorlavel'])->name('sponsorlavel');
     Route::get('/addfund', [AddFundcontroller::class, 'addfund'])->name('addfund');
+    Route::get('/addeddeposite', [AddFundcontroller::class, 'addeddeposite'])->name('addeddeposite');
+    Route::get('/addedbankdeposite', [AddFundcontroller::class, 'addedbankdeposite'])->name('addedbankdeposite');
+    Route::get('/balancetransfer', [AddFundcontroller::class, 'balancetransfer'])->name('balancetransfer');
+    Route::get('/balancetransfer_report', [AddFundcontroller::class, 'balancetransfer_report'])->name('balancetransfer_report');
+    Route::get('/senderrecvierreport', [AddFundcontroller::class, 'senderrecvierreport'])->name('senderrecvierreport');
+    Route::get('/account', [Dashboardcontroller::class, 'account'])->name('account');
+    Route::get('/commission', [Dashboardcontroller::class, 'commission'])->name('commission');
+    Route::get('/profile_view', [Dashboardcontroller::class, 'profile_view'])->name('profile_view');
 
     Route::resource('category', BusinessSoluton::class);
     Route::resource('goal_category', Goalobjective::class);

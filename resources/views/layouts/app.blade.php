@@ -337,6 +337,8 @@
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="{{ route('generalView') }}">Genealogy View </a></li>
                                     <li><a href="{{ route('partnerTeam') }}">partnerTeam </a></li>
+                                    <li><a href="{{ route('sponsorlist') }}">Sponsor List </a></li>
+                                    <li><a href="{{ route('sponsorlavel') }}">sponsorlavel </a></li>
                                 </ul>
                             </li>
                              <li>
@@ -347,9 +349,21 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="{{ route('addfund') }}">Fund Add Details</a></a></li>
-                                    <li><a href="">Balance Transfer</a></a></li>
-                                    <li><a href="">Balance Transfer Report</a></a></li>
-                                    <li><a href="">Balance Receive Report</a></a></li>
+                                    <li><a href="{{ route('balancetransfer') }}">Balance Transfer</a></a></li>
+                                    <li><a href="{{ route('balancetransfer_report') }}">Balance Transfer Report</a></a></li>
+                                    <li><a href="{{ route('senderrecvierreport') }}">Balance Receive Report</a></a></li>
+                                </ul>
+                            </li>
+                             <li>
+                                <a href="javascript: void(0);">
+                                    <i class="fe-sidebar"></i>
+                                    <span>Account</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="{{ route('account') }}">Dashboard </a></li>
+                                    <li><a href="{{ route('commission') }}">Commission List </a></li>
+                                    <li><a href="{{ route('profile_view') }}">Profile View/Edit </a></li>
                                 </ul>
                             </li>
                               @endif

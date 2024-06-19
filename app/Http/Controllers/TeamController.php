@@ -37,6 +37,11 @@ class TeamController extends Controller
     public function partnerAdd(){
         return view('admin.team.register');
     }
+    public function sponsorlist()
+    {
+        return view('admin.team.sponsorlist');
+    }
+
 
     public function teamRegister(Request $request)
     {
