@@ -14,6 +14,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AddFundcontroller;
 use App\Http\Controllers\Dashboardcontroller;
+use App\Http\Controllers\TradeViewController;
 
 
 // Route::get('/', function () {
@@ -43,7 +44,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/partnerAdd', [TeamController::class, 'partnerAdd'])->name('partnerAdd');
     Route::post('/teamRegister', [TeamController::class, 'teamRegister'])->name('teamRegister');
     Route::get('/sponsorlist', [TeamController::class, 'sponsorlist'])->name('sponsorlist');
-    Route::post('/sponsorlavel', [TeamController::class, 'sponsorlavel'])->name('sponsorlavel');
+    Route::get('/sponsorlavel', [TeamController::class, 'sponsorlavel'])->name('sponsorlavel');
     Route::get('/addfund', [AddFundcontroller::class, 'addfund'])->name('addfund');
     Route::get('/addeddeposite', [AddFundcontroller::class, 'addeddeposite'])->name('addeddeposite');
     Route::get('/addedbankdeposite', [AddFundcontroller::class, 'addedbankdeposite'])->name('addedbankdeposite');
@@ -53,6 +54,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/account', [Dashboardcontroller::class, 'account'])->name('account');
     Route::get('/commission', [Dashboardcontroller::class, 'commission'])->name('commission');
     Route::get('/profile_view', [Dashboardcontroller::class, 'profile_view'])->name('profile_view');
+    Route::get('/changepassword', [Dashboardcontroller::class, 'changepassword'])->name('changepassword');
+    Route::get('/tradeform', [TradeViewController::class, 'tradeform'])->name('tradeform');
+    Route::get('/tradereport', [TradeViewController::class, 'tradereport'])->name('tradereport');
+    Route::get('/mytradelist', [TradeViewController::class, 'mytradelist'])->name('mytradelist');
 
     Route::resource('category', BusinessSoluton::class);
     Route::resource('goal_category', Goalobjective::class);

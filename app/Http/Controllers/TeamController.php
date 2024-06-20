@@ -41,6 +41,11 @@ class TeamController extends Controller
     {
         return view('admin.team.sponsorlist');
     }
+    public function sponsorlavel()
+    {
+        return view('admin.team.sponsorlavel');
+    }
+
 
 
     public function teamRegister(Request $request)

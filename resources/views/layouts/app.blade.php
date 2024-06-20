@@ -339,6 +339,7 @@
                                     <li><a href="{{ route('partnerTeam') }}">partnerTeam </a></li>
                                     <li><a href="{{ route('sponsorlist') }}">Sponsor List </a></li>
                                     <li><a href="{{ route('sponsorlavel') }}">sponsorlavel </a></li>
+                                    <li><a href="{{ route('register') }}">Register Now </a></li>
                                 </ul>
                             </li>
                              <li>
@@ -364,6 +365,20 @@
                                     <li><a href="{{ route('account') }}">Dashboard </a></li>
                                     <li><a href="{{ route('commission') }}">Commission List </a></li>
                                     <li><a href="{{ route('profile_view') }}">Profile View/Edit </a></li>
+                                    <li><a href="{{ route('changepassword') }}">Change Password </a></li>
+                                </ul>
+                            </li>
+                             <li>
+                                <a href="javascript: void(0);">
+                                    <i class="fe-sidebar"></i>
+                                    <span>Trade View</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="{{ route('tradeform') }}">Trade View </a></li>
+                                    <li><a href="{{ route('tradereport') }}">Trade Report</a></li>
+                                    <li><a href="{{ route('mytradelist') }}">My Tradelist </a></li>
+                                    <li><a href="{{ route('changepassword') }}">Change Password </a></li>
                                 </ul>
                             </li>
                               @endif
